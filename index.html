@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trait. — Arquitectura Diagnóstica de Comportamiento</title>
+  <title>Trait. — Framework de Capacidad Humana</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
@@ -29,30 +29,62 @@
 <!-- SECTION 1: HERO -->
 <section id="hero">
   <div class="hero-inner">
-    <span class="eyebrow hero-eyebrow">FRAMEWORK DE CAPACIDAD HUMANA</span>
-    <h1 class="hero-headline">
-      <span class="hero-headline-line"><span>Las habilidades te dicen</span></span>
-      <span class="hero-headline-line"><span>lo que tu gente sabe.</span></span>
-      <span class="hero-headline-line"><span>Los Modos revelan</span></span>
-      <span class="hero-headline-line"><span>cómo va a operar.</span></span>
-    </h1>
-    <p class="hero-subtext">En un mundo donde la tecnología cambia más rápido de lo que las personas pueden procesarla, la ventaja competitiva real no está en la herramienta. Está en la capacidad del humano que tiene que usarla.</p>
-    <div class="hero-ctas">
-      <a href="#formulario" class="btn-primary">Mapeá tu equipo →</a>
-      <a href="#modos" class="btn-secondary">Ver cómo funciona ↓</a>
+    <div class="hero-content">
+      <span class="eyebrow hero-eyebrow">FRAMEWORK DE CAPACIDAD HUMANA</span>
+      <h1 class="hero-headline">
+        <span class="hero-headline-line"><span>Medí cómo opera</span></span>
+        <span class="hero-headline-line"><span>tu equipo frente a</span></span>
+        <span class="hero-headline-line"><span>la IA, la tecnología</span></span>
+        <span class="hero-headline-line"><span>y el cambio.</span></span>
+      </h1>
+      <p class="hero-subtext">Las skills muestran lo que tu gente sabe. Trait revela cómo piensa, decide y actúa cuando el contexto cambia.</p>
+      <div class="hero-ctas">
+        <a href="#formulario" class="btn-primary">Mapeá tu equipo →</a>
+        <a href="#modos" class="btn-secondary">Ver cómo funciona ↓</a>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="stat-num" data-count="95" data-suffix="%">0%</span>
-        <p class="stat-desc">de las organizaciones no ven ROI en IA generativa</p>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num" data-count="70" data-suffix="%">0%</span>
-        <p class="stat-desc">de las transformaciones digitales no alcanzan sus objetivos</p>
-      </div>
-      <div class="hero-stat">
-        <span class="stat-num" data-count="88" data-suffix="%">0%</span>
-        <p class="stat-desc">de los procesos de cambio organizacional fracasan</p>
+    <div class="hero-card-wrap">
+      <div class="hero-mode-card">
+        <div class="hero-mode-card-top">
+          <span class="hero-mode-card-label">MODO DOMINANTE</span>
+          <span class="hero-mode-card-mode">Modo Filtro</span>
+          <div class="hero-mode-card-tags">
+            <span class="pill pill-violet">Criterio</span>
+            <span class="pill pill-violet">Claridad</span>
+            <span class="pill pill-violet">Foco</span>
+          </div>
+        </div>
+        <div class="hero-radar-wrap">
+          <svg class="hero-radar-svg" width="200" height="200" data-mode="filtro" data-color="violet"></svg>
+        </div>
+        <p class="hero-mode-card-desc">Ordena el ruido, prioriza información y convierte complejidad en decisiones claras.</p>
+        <div class="hero-mode-card-scores">
+          <div class="hero-score-row">
+            <span class="hero-score-label">Mental</span>
+            <div class="hero-score-bar-track"><div class="hero-score-bar-fill" style="width:88%"></div></div>
+            <span class="hero-score-val">88%</span>
+          </div>
+          <div class="hero-score-row">
+            <span class="hero-score-label">Change</span>
+            <div class="hero-score-bar-track"><div class="hero-score-bar-fill" style="width:75%"></div></div>
+            <span class="hero-score-val">75%</span>
+          </div>
+          <div class="hero-score-row">
+            <span class="hero-score-label">People</span>
+            <div class="hero-score-bar-track"><div class="hero-score-bar-fill" style="width:65%"></div></div>
+            <span class="hero-score-val">65%</span>
+          </div>
+          <div class="hero-score-row">
+            <span class="hero-score-label">Results</span>
+            <div class="hero-score-bar-track"><div class="hero-score-bar-fill" style="width:72%"></div></div>
+            <span class="hero-score-val">72%</span>
+          </div>
+          <div class="hero-score-row">
+            <span class="hero-score-label">Self-Aware</span>
+            <div class="hero-score-bar-track"><div class="hero-score-bar-fill" style="width:90%"></div></div>
+            <span class="hero-score-val">90%</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -62,27 +94,21 @@
 <section id="problema-real">
   <div class="container">
     <p class="problema-statement reveal">La tecnología no falla.<br>Las personas no estaban listas para adoptarla.<br>Y nadie lo midió antes de invertir.</p>
-    <p class="reveal" style="max-width:680px;">Las organizaciones capacitan, comunican, implementan. Y después se preguntan por qué no pega. La respuesta no está en la herramienta. Está en las personas que tienen que usarla — y en si tienen la capacidad real para moverse hacia algo nuevo.</p>
     <div class="problema-stats">
       <div class="reveal">
-        <span class="stat-num" data-count="63" data-suffix="%">0%</span>
-        <p class="stat-desc" style="margin-top:8px;">Los problemas de personas bloquean la adopción de IA</p>
-        <p class="stat-source">No la tecnología. No el presupuesto. (Prosci, 1.107 empresas)</p>
+        <span class="stat-num" data-count="95" data-suffix="%">0%</span>
+        <p class="stat-desc">de las organizaciones no ven ROI en IA generativa</p>
       </div>
       <div class="reveal" style="transition-delay:80ms">
-        <span class="stat-fraction">
-          <span class="stat-frac-num">1</span>
-          <span class="stat-frac-of">de cada 7</span>
-        </span>
-        <p class="stat-desc" style="margin-top:8px;">Empleados que rechazan activamente la nueva tecnología</p>
-        <p class="stat-source">El 39% admite ser adoptante resistente. (Yooz, 2025)</p>
+        <span class="stat-num" data-count="70" data-suffix="%">0%</span>
+        <p class="stat-desc">de las transformaciones digitales no alcanzan sus objetivos</p>
       </div>
       <div class="reveal" style="transition-delay:160ms">
-        <span class="stat-num" data-count="52" data-suffix="%">0%</span>
-        <p class="stat-desc" style="margin-top:8px;">Solo reciben capacitación básica en IA</p>
-        <p class="stat-source">El 20% no recibe ninguna orientación. (Prosci, 2025)</p>
+        <span class="stat-num" data-count="88" data-suffix="%">0%</span>
+        <p class="stat-desc">de los procesos de cambio organizacional fracasan</p>
       </div>
     </div>
+    <p class="problema-close reveal">El patrón es claro: se invierte en tecnología, pero se diagnostica tarde a las personas.</p>
   </div>
 </section>
 
@@ -90,45 +116,34 @@
 <section id="familiar">
   <div class="container">
     <span class="eyebrow reveal">EL PROBLEMA</span>
-    <h2 class="reveal" style="margin-bottom:8px;">¿Te suena familiar?</h2>
+    <h2 class="reveal">¿Te suena familiar?</h2>
     <div class="pain-list">
       <div class="pain-item reveal">
         <span class="pain-num">01</span>
         <div class="pain-content">
           <h3>¿Invertiste en capacitación y los comportamientos no cambiaron?</h3>
-          <p>Gastaste tiempo y presupuesto. El modo de operar sigue igual.</p>
         </div>
       </div>
       <div class="pain-item reveal">
         <span class="pain-num">02</span>
         <div class="pain-content">
-          <h3>¿Tus líderes adoptaron las herramientas pero el equipo no las usa?</h3>
-          <p>La brecha no es de acceso. Es de capacidad.</p>
+          <h3>¿Tus líderes usan IA, pero los equipos no la incorporan?</h3>
         </div>
       </div>
       <div class="pain-item reveal">
         <span class="pain-num">03</span>
         <div class="pain-content">
-          <h3>¿Sabés que el problema es humano pero no tenés datos para abordarlo?</h3>
-          <p>Entendés el qué. No el por qué ni el cómo.</p>
+          <h3>¿Sabés que hay resistencia, pero no sabés dónde ni por qué?</h3>
         </div>
       </div>
       <div class="pain-item reveal">
         <span class="pain-num">04</span>
         <div class="pain-content">
-          <h3>¿Tu organización repite los mismos patrones de resistencia?</h3>
-          <p>Identificás el patrón pero no sabés cómo romperlo.</p>
-        </div>
-      </div>
-      <div class="pain-item reveal">
-        <span class="pain-num">05</span>
-        <div class="pain-content">
-          <h3>¿Tomás decisiones sobre personas basándote en intuición, no en evidencia?</h3>
-          <p>Te falta el mapa antes de trazar el camino.</p>
+          <h3>¿Seguís tomando decisiones de talento desde percepción e intuición?</h3>
         </div>
       </div>
     </div>
-    <p class="familiar-close reveal">Si alguna de estas situaciones te resulta familiar, Trait. Ground Map puede ayudarte a entender qué está pasando — y cómo operar desde ahí.</p>
+    <p class="familiar-close reveal">Trait convierte esos patrones en datos accionables.</p>
   </div>
 </section>
 
@@ -136,46 +151,46 @@
 <section id="modelo">
   <div class="container">
     <span class="eyebrow reveal">EL MODELO</span>
-    <h2 class="reveal" style="margin-bottom:24px;">Entender cómo opera tu gente es el paso que todos saltan.</h2>
-    <p class="reveal" style="max-width:720px;margin-bottom:20px;">Trait. Ground Map es un sistema de diagnóstico y evolución en dos capas. Mide lo que casi todos confunden: quién sos en términos de capacidad de cambio (lo que persiste) y dónde estás parado hoy en relación al contexto (lo situacional).</p>
-    <p class="reveal" style="max-width:720px;">La capacidad de adaptación no es un rasgo de personalidad. Es medible. Y el Trait. Ground Map es el sistema para hacerlo — individual o colectivamente.</p>
+    <h2 class="reveal">Entender cómo opera tu gente es el paso que todos saltan.</h2>
+    <p class="reveal" style="max-width:720px;margin-top:20px;">Trait Ground Map mide dos capas: <strong style="color:var(--violet-light)">Ground</strong>, tu capacidad base para aprender, adaptarte y sostener cambio. <strong style="color:var(--teal)">Map</strong>, cómo estás operando hoy según tu contexto, presión y momento actual.</p>
+    <p class="reveal" style="max-width:720px;margin-top:16px;">La combinación permite saber quién puede adoptar, quién necesita acompañamiento y qué intervención tiene más sentido.</p>
     <div class="model-cards">
       <div class="card card-violet reveal">
         <div class="model-card-label violet">CAPA 1 · GROUND</div>
-        <p>Quién sos en términos de capacidad de aprendizaje y cambio. Relativamente estable. Formada por comportamiento acumulado. La base.</p>
+        <p>Tu capacidad base para aprender, adaptarte y sostener cambio. Relativamente estable. Formada por comportamiento acumulado.</p>
       </div>
       <div class="card card-teal reveal" style="transition-delay:80ms">
         <div class="model-card-label teal">CAPA 2 · MAP</div>
-        <p>Dónde estás parado hoy en relación al contexto actual. Más situacional, más proyectiva. Tu posición, no tu identidad.</p>
+        <p>Cómo estás operando hoy en relación al contexto actual. Más situacional, más proyectiva. Tu posición, no tu identidad.</p>
       </div>
     </div>
     <hr class="model-divider">
     <span class="eyebrow reveal">EL CONTEXTO</span>
-    <h2 class="reveal" style="margin-bottom:24px;">Ya no vivimos en un mundo VUCA. Vivimos en BANI.</h2>
-    <p class="reveal" style="max-width:720px;">Los frameworks de talento tradicionales fueron diseñados para la incertidumbre. El contexto de hoy es otra cosa — y eso cambia completamente qué significa ser bueno en algo.</p>
+    <h2 class="reveal">Ya no vivimos en un mundo VUCA. Vivimos en BANI.</h2>
+    <p class="reveal" style="max-width:720px;margin-top:20px;">Los frameworks de talento tradicionales fueron diseñados para la incertidumbre. El contexto de hoy es otra cosa. Y eso cambia completamente qué significa ser bueno en algo.</p>
     <div class="bani-grid">
       <div class="bani-card reveal">
-        <div class="bani-letter">B</div>
-        <div class="bani-word">Frágil</div>
+        <span class="bani-letter">B</span>
+        <span class="bani-word">Frágil</span>
         <p class="bani-desc">Los sistemas que parecían estables se rompen de golpe.</p>
       </div>
       <div class="bani-card reveal" style="transition-delay:100ms">
-        <div class="bani-letter">A</div>
-        <div class="bani-word">Ansioso</div>
+        <span class="bani-letter">A</span>
+        <span class="bani-word">Ansioso</span>
         <p class="bani-desc">Presión constante y sobrecarga de información como estado por defecto.</p>
       </div>
       <div class="bani-card reveal" style="transition-delay:200ms">
-        <div class="bani-letter">N</div>
-        <div class="bani-word">No lineal</div>
+        <span class="bani-letter">N</span>
+        <span class="bani-word">No lineal</span>
         <p class="bani-desc">El esfuerzo ya no produce resultados proporcionales.</p>
       </div>
       <div class="bani-card reveal" style="transition-delay:300ms">
-        <div class="bani-letter">I</div>
-        <div class="bani-word">Incomprensible</div>
+        <span class="bani-letter">I</span>
+        <span class="bani-word">Incomprensible</span>
         <p class="bani-desc">Nadie entiende del todo qué está pasando. Darle sentido a la realidad se vuelve en sí misma la habilidad.</p>
       </div>
     </div>
-    <p class="bani-close reveal">En un mundo BANI, ya no alcanza con preguntar si alguien sabe hacer algo. La pregunta real es: cómo opera esta persona cuando el contexto se vuelve frágil, ansioso, no lineal e incomprensible. Eso es lo que Trait. mide.</p>
+    <p class="bani-close reveal">En un mundo BANI, ya no alcanza con preguntar si alguien sabe hacer algo. La pregunta real es cómo opera esta persona cuando el contexto se vuelve frágil, ansioso, no lineal e incomprensible. Eso es lo que Trait mide.</p>
   </div>
 </section>
 
@@ -183,12 +198,11 @@
 <section id="modos">
   <div class="container">
     <span class="eyebrow reveal">EL MODELO</span>
-    <h2 class="reveal modos-title" style="font-size:clamp(28px,3.5vw,40px);margin-bottom:24px;">Tus traits determinan<br>en qué modos podés operar.</h2>
-    <p class="reveal modos-intro">Un trait es una característica relativamente estable, medible, basada en comportamiento acumulado. Un modo es cómo estás operando ahora — el patrón dominante que emerge de la combinación de tus traits y tu contexto actual. No sos un modo para siempre. Estás en un modo hoy.</p>
+    <h2 class="reveal modos-title">Tus traits determinan en qué modos podés operar.</h2>
+    <p class="reveal modos-intro">Un trait es una característica relativamente estable, medible, basada en comportamiento acumulado. Un modo es cómo estás operando ahora. No sos un modo para siempre. Estás en un modo hoy.</p>
 
     <div class="modes-accordion" id="modesAccordion">
 
-      <!-- MODO 1: ESPEJO -->
       <div class="mode-row reveal" data-mode="espejo">
         <div class="mode-header">
           <span class="mode-num">01</span>
@@ -204,7 +218,7 @@
               <svg class="radar-svg" width="200" height="200" data-mode="espejo" data-color="violet"></svg>
             </div>
             <div class="mode-right">
-              <p class="mode-desc">El Espejo absorbe y refleja el entorno. Aporta estabilidad, memoria institucional y cohesión — esencial en procesos de transición. Su riesgo: cuando el contexto exige ruptura, puede anclar al equipo a lo que alguna vez funcionó.</p>
+              <p class="mode-desc">Observa patrones, conserva memoria organizacional y detecta incoherencias entre lo que se dice y lo que se hace.</p>
               <div class="mode-bars"
                 data-vals="35,25,55,40,60"
                 data-labels="Mental,Change,People,Results,Self-Aware"
@@ -215,7 +229,6 @@
         </div>
       </div>
 
-      <!-- MODO 2: SENSOR -->
       <div class="mode-row reveal" data-mode="sensor">
         <div class="mode-header">
           <span class="mode-num">02</span>
@@ -231,7 +244,7 @@
               <svg class="radar-svg" width="200" height="200" data-mode="sensor" data-color="violet"></svg>
             </div>
             <div class="mode-right">
-              <p class="mode-desc">El Sensor se mueve rápido, prueba en paralelo y detecta señales antes que todos. Primer adoptante, radar natural del equipo. Su riesgo: amplitud sin profundidad — empieza muchas cosas y aterriza pocas.</p>
+              <p class="mode-desc">Lee señales débiles, anticipa cambios y percibe tensiones antes de que se vuelvan problemas visibles.</p>
               <div class="mode-bars"
                 data-vals="72,80,48,38,50"
                 data-labels="Mental,Change,People,Results,Self-Aware"
@@ -242,7 +255,6 @@
         </div>
       </div>
 
-      <!-- MODO 3: FILTRO (default abierto) -->
       <div class="mode-row reveal active" data-mode="filtro">
         <div class="mode-header">
           <span class="mode-num">03</span>
@@ -259,7 +271,7 @@
               <svg class="radar-svg" width="200" height="200" data-mode="filtro" data-color="violet"></svg>
             </div>
             <div class="mode-right">
-              <p class="mode-desc">El Filtro evalúa antes de actuar. En un equipo heterogéneo es la referencia — no porque sepa más, sino porque piensa mejor. Convierte el ruido del Sensor y el contexto del Espejo en decisiones accionables.</p>
+              <p class="mode-desc">Ordena el ruido, prioriza información y convierte complejidad en decisiones claras.</p>
               <div class="mode-bars"
                 data-vals="88,75,65,72,90"
                 data-labels="Mental,Change,People,Results,Self-Aware"
@@ -270,7 +282,6 @@
         </div>
       </div>
 
-      <!-- MODO 4-A: ARQUITECTO -->
       <div class="mode-row reveal" data-mode="arquitecto">
         <div class="mode-header">
           <span class="mode-num teal">04-A</span>
@@ -286,7 +297,7 @@
               <svg class="radar-svg" width="200" height="200" data-mode="arquitecto" data-color="teal"></svg>
             </div>
             <div class="mode-right">
-              <p class="mode-desc">El Arquitecto piensa en sistemas. Construye lo que otros van a transitar. Su trabajo hace que el cambio sea sostenible más allá del entusiasmo inicial. Su punto ciego crítico: construye solo.</p>
+              <p class="mode-desc">Diseña sistemas, estructura procesos y convierte ideas en modelos operativos sostenibles.</p>
               <div class="mode-bars"
                 data-vals="85,68,32,88,70"
                 data-labels="Mental,Change,People,Results,Self-Aware"
@@ -297,7 +308,6 @@
         </div>
       </div>
 
-      <!-- MODO 4-B: PUENTE -->
       <div class="mode-row reveal" data-mode="puente">
         <div class="mode-header">
           <span class="mode-num amber">04-B</span>
@@ -313,7 +323,7 @@
               <svg class="radar-svg" width="200" height="200" data-mode="puente" data-color="teal"></svg>
             </div>
             <div class="mode-right">
-              <p class="mode-desc">El Puente mueve a otros. Sin él, el cambio queda en documentos. Con él, llega a las personas que tienen que vivirlo. Su métrica no es lo que hace — es cuántas personas se movieron por él.</p>
+              <p class="mode-desc">Conecta personas, traduce el cambio y genera adopción a través del vínculo.</p>
               <div class="mode-bars"
                 data-vals="68,85,95,58,78"
                 data-labels="Mental,Change,People,Results,Self-Aware"
@@ -326,10 +336,9 @@
 
     </div>
 
-    <!-- CALLOUT DUPLA -->
     <div class="dupla-callout reveal">
       <span class="dupla-label">LA DUPLA QUE MUEVE ORGANIZACIONES</span>
-      <p style="font-size:15px;color:var(--text);">El Arquitecto y el Puente trabajando juntos es la combinación más potente de cualquier proceso de transformación. El Arquitecto construye lo que el Puente comunica. Separados, cada uno opera con la mitad de su capacidad. Juntos, el cambio llega a todos y se sostiene.</p>
+      <p style="font-size:15px;color:var(--text);">El Arquitecto diseña el sistema. El Puente hace que las personas lo adopten. Juntos convierten una transformación en algo que realmente sucede.</p>
     </div>
   </div>
 </section>
@@ -341,22 +350,7 @@
     <h2 class="reveal">Elegí cómo trabajar con Trait.</h2>
     <div class="propuestas-grid">
 
-      <div class="propuesta-card card-violet reveal">
-        <div class="propuesta-tipo violet">PERSONA</div>
-        <p class="propuesta-desc">Diagnóstico individual y roadmap concreto, a tu ritmo.</p>
-        <ul class="propuesta-list">
-          <li>Ground Map completo (Capa 1 + Capa 2)</li>
-          <li>Modo dominante + índice de capacidad</li>
-          <li>Roadmap 30/60/90 días</li>
-          <li>Acceso al agente de IA de Trait.</li>
-        </ul>
-        <div class="propuesta-cta-wrap">
-          <a href="#formulario" class="btn-propuesta btn-prop-primary">Quiero empezar</a>
-          <a href="#formulario" class="btn-propuesta btn-prop-ghost">Dejar mis datos</a>
-        </div>
-      </div>
-
-      <div class="propuesta-card card-teal reveal" style="transition-delay:80ms">
+      <div class="propuesta-card card-teal reveal">
         <div class="propuesta-tipo teal">EMPRESA</div>
         <p class="propuesta-desc">Para equipos, líderes y organizaciones que necesitan datos reales sobre cómo opera su gente.</p>
         <ul class="propuesta-list">
@@ -368,10 +362,22 @@
         </ul>
         <div class="propuesta-cta-wrap">
           <a href="#formulario" class="btn-propuesta btn-prop-teal">Agendar una reunión</a>
-          <a href="#formulario" class="btn-propuesta btn-prop-ghost-teal">Dejar mis datos</a>
         </div>
       </div>
 
+      <div class="propuesta-card card-violet reveal" style="transition-delay:80ms">
+        <div class="propuesta-tipo violet">PERSONA</div>
+        <p class="propuesta-desc">Diagnóstico individual y roadmap concreto, a tu ritmo.</p>
+        <ul class="propuesta-list">
+          <li>Ground Map completo</li>
+          <li>Modo dominante + índice de capacidad</li>
+          <li>Roadmap 30/60/90 días</li>
+          <li>Acceso al agente de IA de Trait</li>
+        </ul>
+        <div class="propuesta-cta-wrap">
+          <a href="#formulario" class="btn-propuesta btn-prop-primary">Quiero empezar</a>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -383,11 +389,11 @@
     <div class="gm-layout">
       <div class="gm-left">
         <span class="eyebrow reveal">LA HERRAMIENTA</span>
-        <h2 class="reveal">Un mapa de capacidad en tiempo real.</h2>
-        <p class="reveal" style="margin-top:20px;font-size:17px;">Trait. Ground Map combina diagnóstico conductual, IA y acompañamiento humano para pasar de la intuición a la evidencia.</p>
+        <h2 class="reveal">Un mapa claro para saber quién puede adoptar, quién necesita acompañamiento y cómo intervenir.</h2>
+        <p class="reveal" style="margin-top:20px;font-size:17px;">Trait Ground Map combina diagnóstico conductual, IA y acompañamiento humano para pasar de la intuición a la evidencia.</p>
         <ul class="gm-feature-list">
           <li class="reveal">Seguí la capacidad de tu equipo en tiempo real</li>
-          <li class="reveal" style="transition-delay:60ms">Monitoreá el modo dominante de cada persona</li>
+          <li class="reveal" style="transition-delay:60ms">Visualizá el modo dominante de cada persona y equipo</li>
           <li class="reveal" style="transition-delay:120ms">Recibí recomendaciones concretas según el contexto actual</li>
           <li class="reveal" style="transition-delay:180ms">Tomá decisiones de personas con datos, no con intuición</li>
         </ul>
@@ -396,7 +402,7 @@
           <div class="gm-tab" data-tab="map">Map</div>
         </div>
         <div id="tab-ground" class="gm-tab-content active reveal">
-          El diagnóstico de capacidad base: quién es cada persona en términos de aprendizaje y adaptación — lo que persiste más allá del momento.
+          El diagnóstico de capacidad base: quién es cada persona en términos de aprendizaje y adaptación. Lo que persiste más allá del momento.
         </div>
         <div id="tab-map" class="gm-tab-content reveal">
           La posición situacional: dónde está operando cada persona hoy, en relación al contexto de cambio actual.
@@ -444,15 +450,15 @@
 <section id="antes-despues">
   <div class="container">
     <span class="eyebrow reveal">TRANSFORMACIÓN</span>
-    <h2 class="reveal">Antes y después: tener el mapa lo cambia todo.</h2>
+    <h2 class="reveal">Tener el mapa lo cambia todo.</h2>
     <div class="antes-despues-grid">
       <div class="antes-col reveal">
         <span class="ad-col-label">ANTES</span>
         <ul class="ad-list">
           <li>Tomás decisiones sobre personas desde la intuición.</li>
-          <li>Capacitaste en IA y los modos de operar no cambiaron.</li>
+          <li>Invertiste en IA, pero la adopción quedó concentrada en pocas personas.</li>
           <li>Los mismos patrones de resistencia se repiten.</li>
-          <li>Sabés que el problema es humano pero no tenés cómo abordarlo.</li>
+          <li>Sabés que el problema es humano, pero no tenés cómo abordarlo.</li>
           <li>La brecha entre quienes se mueven y quienes no sigue creciendo.</li>
         </ul>
       </div>
@@ -461,8 +467,8 @@
         <ul class="ad-list">
           <li>Tenés un mapa claro de cómo opera cada persona y cada equipo.</li>
           <li>Tomás decisiones de capacitación basadas en datos reales.</li>
-          <li>Sabés exactamente a quién y cómo acompañar en cada etapa.</li>
-          <li>Tu equipo tiene un roadmap concreto y medible.</li>
+          <li>Sabés a quién acompañar, cómo y en qué etapa.</li>
+          <li>Cada equipo tiene un roadmap de adopción específico y medible.</li>
           <li>Convertís la resistencia en información, no en obstáculo.</li>
         </ul>
       </div>
@@ -474,16 +480,20 @@
 <section id="por-que">
   <div class="container">
     <span class="eyebrow reveal">POR QUÉ TRAIT.</span>
-    <h2 class="reveal" style="margin-bottom:24px;">Entonces, ¿por qué Trait.?</h2>
-    <p class="porq-intro reveal">Entender cómo opera tu gente es la base de cualquier proceso de cambio real. Trait. Ground Map es el paso que casi todos saltan — y que determina si lo que viene después tiene tracción o no.</p>
+    <h2 class="reveal">Entonces, ¿por qué Trait?</h2>
+    <p class="porq-intro reveal">Entender cómo opera tu gente es la base de cualquier proceso de cambio real. Trait Ground Map es el paso que casi todos saltan. Y determina si lo que viene después tiene tracción o no.</p>
     <div class="porq-blocks">
       <div class="porq-block reveal">
         <h3>El Framework.</h3>
-        <p>Va al fondo: entiende desde dónde opera cada persona antes de capacitarla, reorganizarla o evaluarla. La intervención se vuelve más eficiente porque tiene base diagnóstica real.</p>
+        <p>Mide cómo opera cada persona antes de capacitarla, reorganizarla o evaluarla. La intervención se vuelve más eficiente porque parte de una base diagnóstica real.</p>
       </div>
       <div class="porq-block reveal">
-        <h3>La tecnología.</h3>
-        <p>La plataforma permite seguimiento en tiempo real, recomendaciones personalizadas y métricas concretas de evolución — para personas y equipos.</p>
+        <h3>La Tecnología.</h3>
+        <p>Convierte el diagnóstico en scores, mapas, recomendaciones y seguimiento para personas y equipos.</p>
+      </div>
+      <div class="porq-block reveal">
+        <h3>La Lectura Humana.</h3>
+        <p>No etiqueta personas. Interpreta patrones, contexto y potencial de evolución para acompañar mejor el cambio.</p>
       </div>
     </div>
   </div>
@@ -495,8 +505,8 @@
     <div class="form-layout">
       <div class="form-intro">
         <span class="eyebrow reveal">EMPECEMOS</span>
-        <h2 class="reveal">Conocé cómo Trait. Ground Map puede ayudar a tu equipo.</h2>
-        <p class="form-subtitle reveal">Completá tus datos y nos ponemos en contacto. Te respondemos en menos de 24 horas.</p>
+        <h2 class="reveal">Mapeá la capacidad de adopción de tu equipo.</h2>
+        <p class="form-subtitle reveal">Completá tus datos y coordinamos una primera conversación para entender tu contexto, tu equipo y el tipo de diagnóstico que necesitás.</p>
       </div>
       <form class="reveal" onsubmit="return false;">
         <div class="form-grid">
@@ -548,8 +558,8 @@
             <label class="form-label">¿Sobre qué propuesta?</label>
             <select class="form-select">
               <option value="" disabled selected>Seleccioná una opción</option>
-              <option>Persona</option>
               <option>Empresa</option>
+              <option>Persona</option>
               <option>No estoy seguro/a</option>
             </select>
           </div>
