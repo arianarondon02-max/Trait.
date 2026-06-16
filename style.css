@@ -238,6 +238,12 @@ p { color: var(--text); }
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 80px;
+  align-items: center;
+}
+.hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -247,7 +253,7 @@ p { color: var(--text); }
   animation: fadeIn 300ms ease 0ms forwards;
   margin-bottom: 28px;
 }
-.hero-headline { width: 62%; margin-bottom: 32px; }
+.hero-headline { margin-bottom: 32px; }
 .hero-headline-line { display: block; overflow: hidden; }
 .hero-headline-line span {
   display: block;
@@ -260,7 +266,7 @@ p { color: var(--text); }
 .hero-headline-line:nth-child(3) span { animation-delay: 390ms; }
 .hero-headline-line:nth-child(4) span { animation-delay: 510ms; }
 .hero-subtext {
-  max-width: 52%;
+  max-width: 100%;
   font-size: 17px;
   line-height: 1.65;
   color: var(--text);
@@ -271,29 +277,89 @@ p { color: var(--text); }
 .hero-ctas {
   display: flex;
   gap: 16px;
-  margin-bottom: 96px;
   opacity: 0;
   animation: fadeSlideUp 500ms ease 900ms forwards;
 }
-.hero-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-  border-top: 1px solid var(--line);
-  padding-top: 48px;
+
+/* Hero mode card */
+.hero-card-wrap {
+  opacity: 0;
+  animation: fadeSlideUp 600ms ease 600ms forwards;
 }
-.hero-stat {
+.hero-mode-card {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-top: 2px solid var(--violet);
+  border-radius: 14px;
+  padding: 28px;
+}
+.hero-mode-card-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.hero-mode-card-mode {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  display: block;
+}
+.hero-mode-card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+.hero-radar-wrap {
+  background: rgba(124,111,247,0.04);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 56px 0 0;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 16px;
 }
-.hero-stat:nth-child(2) {
-  border-left: 1px solid var(--line);
-  border-right: 1px solid var(--line);
-  padding: 0 56px;
+.hero-radar-svg { display: block; }
+.hero-mode-card-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  border-left: 2px solid var(--violet);
+  padding-left: 12px;
 }
-.hero-stat:nth-child(3) { padding: 0 0 0 56px; }
+.hero-mode-card-scores { display: flex; flex-direction: column; gap: 10px; }
+.hero-score-row { display: flex; align-items: center; gap: 10px; }
+.hero-score-label {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  min-width: 68px;
+}
+.hero-score-bar-track {
+  flex: 1;
+  height: 2px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.hero-score-bar-fill {
+  height: 100%;
+  background: var(--violet);
+  border-radius: 2px;
+  transition: width 800ms cubic-bezier(0.16,1,0.3,1);
+}
+.hero-score-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--violet-light);
+  min-width: 28px;
+  text-align: right;
+}
 .stat-num {
   font-size: clamp(32px, 3.5vw, 48px);
   font-weight: 800;
@@ -374,6 +440,15 @@ p { color: var(--text); }
   margin-top: 8px;
   line-height: 1.55;
   opacity: 0.7;
+}
+.problema-close {
+  margin-top: 64px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  max-width: 640px;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
 }
 
 /* ── SECTION 3: ¿TE SUENA FAMILIAR? ── */
@@ -978,6 +1053,8 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 56px; }
+  .hero-mode-card { max-width: 480px; }
   .gm-layout { grid-template-columns: 1fr; gap: 64px; }
   .gm-mockup { position: static; max-width: 480px; }
   .porq-block { grid-template-columns: 1fr; gap: 16px; }
