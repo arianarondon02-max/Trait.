@@ -234,16 +234,6 @@ modeRows.forEach(row => {
   });
 });
 
-// ── FAQ ACCORDION ──
-document.querySelectorAll('.faq-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.parentElement;
-    const isActive = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-    if (!isActive) item.classList.add('active');
-  });
-});
-
 // ── GROUND MAP TABS ──
 document.querySelectorAll('.gm-tab').forEach(tab => {
   tab.addEventListener('click', () => {
