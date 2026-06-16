@@ -82,7 +82,8 @@ function getPoint(cx, cy, r, i, val) {
 }
 
 function buildRadar(svgEl, mode, colorKey) {
-  const cx = 100, cy = 100, r = 72;
+  svgEl.setAttribute('viewBox', '-14 -14 228 228');
+  const cx = 100, cy = 100, r = 68;
   const vals = MODE_VALS[mode];
   const colorStroke = colorKey === 'teal' ? 'var(--teal)' : 'var(--violet)';
   const colorFill   = colorKey === 'teal' ? 'rgba(58,202,250,0.20)' : 'rgba(124,111,247,0.20)';
@@ -233,6 +234,10 @@ modeRows.forEach(row => {
     }
   });
 });
+
+// ── HERO RADAR ──
+const heroRadarSvg = document.querySelector('.hero-radar-svg');
+if (heroRadarSvg) buildRadar(heroRadarSvg, 'filtro', 'violet');
 
 // ── GROUND MAP TABS ──
 document.querySelectorAll('.gm-tab').forEach(tab => {
