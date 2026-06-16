@@ -640,13 +640,9 @@ p { color: var(--text); }
   color: var(--text);
   padding: 10px 0;
   border-bottom: 1px solid var(--line);
-  display: flex;
-  gap: 12px;
   line-height: 1.5;
 }
 .propuesta-list li:first-child { border-top: 1px solid var(--line); }
-.propuesta-list li::before { content: "—"; color: var(--violet); flex-shrink: 0; opacity: 0.6; }
-.propuesta-list li.teal::before { color: var(--teal); }
 .propuesta-cta-wrap { display: flex; flex-direction: column; gap: 10px; }
 .btn-propuesta {
   display: inline-flex;
@@ -838,15 +834,11 @@ p { color: var(--text); }
 .ad-list li {
   font-size: 15px;
   color: var(--text);
-  display: flex;
-  gap: 14px;
   line-height: 1.55;
   padding: 14px 0;
   border-bottom: 1px solid var(--line);
 }
 .ad-list li:first-child { border-top: 1px solid var(--line); }
-.antes-col .ad-list li::before  { content: "—"; color: var(--muted); flex-shrink: 0; opacity: 0.5; }
-.despues-col .ad-list li::before { content: "→"; color: var(--violet); flex-shrink: 0; font-size: 14px; opacity: 0.8; }
 
 /* ── SECTION 9: ¿POR QUÉ TRAIT.? ── */
 #por-que { background: var(--surface); }
