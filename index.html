@@ -53,14 +53,12 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      border-bottom: 0.5px solid transparent;
-      transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
+      transition: background 300ms ease, backdrop-filter 300ms ease;
     }
     #nav.scrolled {
-      background: rgba(8,14,32,0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-color: var(--border);
+      background: rgba(8,14,32,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
     .nav-inner {
       max-width: 1200px;
@@ -72,40 +70,49 @@
       justify-content: space-between;
     }
     .wordmark {
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 700;
       color: var(--white);
       text-decoration: none;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.02em;
     }
     .wordmark span { color: var(--violet); }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 8px;
       list-style: none;
+      align-items: center;
     }
     .nav-links a {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text);
       text-decoration: none;
-      transition: color 200ms;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .btn-ghost-nav {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--violet-light);
-      border: 0.5px solid var(--violet);
-      border-radius: 8px;
-      padding: 8px 18px;
-      text-decoration: none;
-      transition: background 200ms, color 200ms;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: color 150ms, background 200ms, border-color 200ms;
       white-space: nowrap;
     }
-    .btn-ghost-nav:hover { background: rgba(124,111,247,0.08); }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a.active {
+      background: rgba(124,111,247,0.15);
+      border-color: rgba(124,111,247,0.35);
+      color: var(--violet-light);
+      font-weight: 500;
+    }
+    .btn-ghost-nav {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--violet-light);
+      border: 1px solid rgba(124,111,247,0.5);
+      border-radius: 999px;
+      padding: 8px 20px;
+      text-decoration: none;
+      transition: background 200ms ease, border-color 200ms ease;
+      white-space: nowrap;
+    }
+    .btn-ghost-nav:hover { background: rgba(124,111,247,0.1); border-color: var(--violet); }
 
     /* ── LAYOUT ── */
     .container {
@@ -706,7 +713,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .nav-links { display: none !important; }
       section { padding: 80px 0; }
       .hero-headline, .hero-subtext { width: 100%; max-width: 100%; }
       .hero-stats { grid-template-columns: 1fr; gap: 32px; max-width: 100%; }
@@ -1411,8 +1418,27 @@
   // ── NAV SCROLL ──
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 80);
+    nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
+
+  // ── NAV ACTIVE LINK ──
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const navSections = ['modelo','modos','propuestas','ground-map','por-que'];
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  navSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
 
   // ── INTERSECTION OBSERVER — SCROLL REVEAL ──
   const revealObserver = new IntersectionObserver((entries) => {
