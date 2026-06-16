@@ -295,12 +295,27 @@ p { color: var(--text); }
 }
 .hero-stat:nth-child(3) { padding: 0 0 0 56px; }
 .stat-num {
-  font-size: clamp(44px, 5.5vw, 72px);
+  font-size: clamp(32px, 3.5vw, 48px);
   font-weight: 800;
   color: var(--white);
   line-height: 0.95;
   letter-spacing: -0.04em;
   display: block;
+}
+.stat-fraction { display: flex; flex-direction: column; gap: 6px; }
+.stat-frac-num {
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.stat-frac-of {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .stat-desc {
   font-size: 14px;
