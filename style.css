@@ -229,12 +229,9 @@ p { color: var(--text); }
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 80px;
-  align-items: center;
 }
 .hero-content {
+  max-width: 680px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1044,8 +1041,6 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 56px; }
-  .hero-mode-card { max-width: 480px; }
   .gm-layout { grid-template-columns: 1fr; gap: 64px; }
   .gm-mockup { position: static; max-width: 480px; }
   .porq-block { grid-template-columns: 1fr; gap: 16px; }
