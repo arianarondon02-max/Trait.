@@ -270,7 +270,7 @@
       <!-- MODO 4-A: ARQUITECTO -->
       <div class="mode-row reveal" data-mode="arquitecto">
         <div class="mode-header">
-          <span class="mode-num teal" style="font-size:28px;">04-A</span>
+          <span class="mode-num teal">04-A</span>
           <span class="mode-name">Arquitecto</span>
           <div class="mode-pills">
             <span class="pill pill-teal">SISTEMAS</span>
@@ -297,7 +297,7 @@
       <!-- MODO 4-B: PUENTE -->
       <div class="mode-row reveal" data-mode="puente">
         <div class="mode-header">
-          <span class="mode-num amber" style="font-size:28px;color:var(--amber);">04-B</span>
+          <span class="mode-num amber">04-B</span>
           <span class="mode-name">Puente</span>
           <div class="mode-pills">
             <span class="pill pill-neutral">IRRADIACIÓN</span>
@@ -335,7 +335,7 @@
 <section id="propuestas">
   <div class="container">
     <span class="eyebrow reveal">NUESTRAS PROPUESTAS</span>
-    <h2 class="reveal" style="margin-bottom:8px;">Elegí cómo trabajar con Trait.</h2>
+    <h2 class="reveal">Elegí cómo trabajar con Trait.</h2>
     <div class="propuestas-grid">
 
       <div class="propuesta-card card-violet reveal">
@@ -377,57 +377,63 @@
 <!-- SECTION 7: EL GROUND MAP -->
 <section id="ground-map">
   <div class="container">
-    <span class="eyebrow reveal">LA HERRAMIENTA</span>
-    <h2 class="reveal" style="margin-bottom:20px;">Un mapa de capacidad en tiempo real.</h2>
-    <p class="reveal" style="max-width:640px;">Trait. Ground Map combina diagnóstico conductual, IA y acompañamiento humano para pasar de la intuición a la evidencia.</p>
-    <ul class="gm-feature-list">
-      <li class="reveal">Seguí la capacidad de tu equipo en tiempo real</li>
-      <li class="reveal" style="transition-delay:60ms">Monitoreá el modo dominante de cada persona</li>
-      <li class="reveal" style="transition-delay:120ms">Recibí recomendaciones concretas según el contexto actual</li>
-      <li class="reveal" style="transition-delay:180ms">Tomá decisiones de personas con datos, no con intuición</li>
-    </ul>
-    <div class="gm-tabs reveal">
-      <div class="gm-tab active violet" data-tab="ground">Ground</div>
-      <div class="gm-tab" data-tab="map">Map</div>
-    </div>
-    <div id="tab-ground" class="gm-tab-content active reveal">
-      El diagnóstico de capacidad base: quién es cada persona en términos de aprendizaje y adaptación — lo que persiste más allá del momento.
-    </div>
-    <div id="tab-map" class="gm-tab-content reveal">
-      La posición situacional: dónde está operando cada persona hoy, en relación al contexto de cambio actual.
-    </div>
-    <div class="gm-mockup reveal">
-      <p class="gm-mockup-header">MODO DOMINANTE</p>
-      <p class="gm-mockup-mode">Modo Filtro</p>
-      <p class="gm-mockup-sub">Alta capacidad base · Tracción contextual media</p>
-      <div class="gm-scores">
-        <div class="score-pill violet">
-          <span class="score-pill-label">G · Ground Score</span>
-          <span>82</span>
+    <div class="gm-layout">
+      <div class="gm-left">
+        <span class="eyebrow reveal">LA HERRAMIENTA</span>
+        <h2 class="reveal">Un mapa de capacidad en tiempo real.</h2>
+        <p class="reveal" style="margin-top:20px;font-size:17px;">Trait. Ground Map combina diagnóstico conductual, IA y acompañamiento humano para pasar de la intuición a la evidencia.</p>
+        <ul class="gm-feature-list">
+          <li class="reveal">Seguí la capacidad de tu equipo en tiempo real</li>
+          <li class="reveal" style="transition-delay:60ms">Monitoreá el modo dominante de cada persona</li>
+          <li class="reveal" style="transition-delay:120ms">Recibí recomendaciones concretas según el contexto actual</li>
+          <li class="reveal" style="transition-delay:180ms">Tomá decisiones de personas con datos, no con intuición</li>
+        </ul>
+        <div class="gm-tabs reveal">
+          <div class="gm-tab active violet" data-tab="ground">Ground</div>
+          <div class="gm-tab" data-tab="map">Map</div>
         </div>
-        <div class="score-pill teal">
-          <span class="score-pill-label">M · Map Score</span>
-          <span>64</span>
+        <div id="tab-ground" class="gm-tab-content active reveal">
+          El diagnóstico de capacidad base: quién es cada persona en términos de aprendizaje y adaptación — lo que persiste más allá del momento.
+        </div>
+        <div id="tab-map" class="gm-tab-content reveal">
+          La posición situacional: dónde está operando cada persona hoy, en relación al contexto de cambio actual.
+        </div>
+        <a href="#formulario" class="btn-primary reveal" style="margin-top:8px;">Contactanos para más información</a>
+      </div>
+      <div class="gm-right">
+        <div class="gm-mockup reveal" style="transition-delay:120ms">
+          <p class="gm-mockup-header">MODO DOMINANTE</p>
+          <p class="gm-mockup-mode">Modo Filtro</p>
+          <p class="gm-mockup-sub">Alta capacidad base · Tracción contextual media</p>
+          <div class="gm-scores">
+            <div class="score-pill violet">
+              <span class="score-pill-label">G · Ground Score</span>
+              <span>82</span>
+            </div>
+            <div class="score-pill teal">
+              <span class="score-pill-label">M · Map Score</span>
+              <span>64</span>
+            </div>
+          </div>
+          <p class="gm-insight">Alta capacidad de cambio, baja tracción contextual. Estás procesando más de lo que estás ejecutando.</p>
+          <p class="roadmap-label">ROADMAP</p>
+          <div class="roadmap-items">
+            <div class="roadmap-item">
+              <span class="roadmap-day">30</span>
+              <span class="roadmap-text">Identificar el foco principal. Reducir inputs, aumentar outputs.</span>
+            </div>
+            <div class="roadmap-item">
+              <span class="roadmap-day">60</span>
+              <span class="roadmap-text">Medir tracción contextual. Ajustar intervención según evolución del índice.</span>
+            </div>
+            <div class="roadmap-item">
+              <span class="roadmap-day">90</span>
+              <span class="roadmap-text">Evaluar cambio de modo. Registrar variación en Ground Score.</span>
+            </div>
+          </div>
         </div>
       </div>
-      <p class="gm-insight">Alta capacidad de cambio, baja tracción contextual. Estás procesando más de lo que estás ejecutando.</p>
-      <p class="roadmap-label">ROADMAP</p>
-      <div class="roadmap-items">
-        <div class="roadmap-item">
-          <span class="roadmap-day">30</span>
-          <span class="roadmap-text">Identificar el foco principal. Reducir inputs, aumentar outputs.</span>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-day">60</span>
-          <span class="roadmap-text">Medir tracción contextual. Ajustar intervención según evolución del índice.</span>
-        </div>
-        <div class="roadmap-item">
-          <span class="roadmap-day">90</span>
-          <span class="roadmap-text">Evaluar cambio de modo. Registrar variación en Ground Score.</span>
-        </div>
-      </div>
     </div>
-    <a href="#formulario" class="btn-primary reveal">Contactanos para más información</a>
   </div>
 </section>
 
@@ -435,7 +441,7 @@
 <section id="antes-despues">
   <div class="container">
     <span class="eyebrow reveal">TRANSFORMACIÓN</span>
-    <h2 class="reveal" style="margin-bottom:8px;">Antes y después: tener el mapa lo cambia todo.</h2>
+    <h2 class="reveal">Antes y después: tener el mapa lo cambia todo.</h2>
     <div class="antes-despues-grid">
       <div class="antes-col reveal">
         <span class="ad-col-label">ANTES</span>
