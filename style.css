@@ -201,7 +201,6 @@ p { color: var(--text); }
 }
 .card-violet { border-top: 2px solid var(--violet); }
 .card-teal   { border-top: 2px solid var(--teal); }
-.card-dim    { border-top: 2px solid var(--violet-dim); }
 
 /* ── REVEAL ANIMATION ── */
 .reveal {
@@ -510,7 +509,6 @@ p { color: var(--text); }
 }
 .propuesta-tipo.violet { color: var(--violet-light); }
 .propuesta-tipo.teal   { color: var(--teal); }
-.propuesta-tipo.dim    { color: var(--muted); }
 .propuesta-desc { font-size: 14px; color: var(--text); margin-bottom: 24px; }
 .propuesta-list { list-style: none; margin-bottom: 32px; flex: 1; }
 .propuesta-list li {
@@ -545,8 +543,6 @@ p { color: var(--text); }
 .btn-prop-teal:hover { opacity: 0.88; transform: translateY(-1px); }
 .btn-prop-ghost-teal { background: transparent; color: var(--teal); border: 0.5px solid rgba(58,202,250,0.3); }
 .btn-prop-ghost-teal:hover { background: rgba(58,202,250,0.06); }
-.btn-prop-dim  { background: transparent; color: var(--muted); border: 0.5px solid rgba(61,54,128,0.5); }
-.btn-prop-dim:hover { background: rgba(61,54,128,0.15); }
 
 /* ── SECTION 7: GROUND MAP ── */
 #ground-map { background: var(--surface); }
@@ -679,36 +675,6 @@ p { color: var(--text); }
   width: 100%;
 }
 .form-submit:hover { background: #9088F9; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(124,111,247,0.35); }
-
-/* ── SECTION 11: FAQs ── */
-#faqs { background: var(--surface); }
-.faq-list { margin-top: 40px; }
-.faq-item { border-bottom: 0.5px solid var(--border-soft); }
-.faq-item:first-child { border-top: 0.5px solid var(--border-soft); }
-.faq-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  cursor: pointer;
-  gap: 24px;
-}
-.faq-question { font-size: 16px; font-weight: 600; color: var(--white); }
-.faq-chevron {
-  flex-shrink: 0;
-  width: 20px;
-  height: 20px;
-  transition: transform 250ms ease;
-}
-.faq-item.active .faq-chevron { transform: rotate(180deg); }
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 300ms ease, opacity 300ms ease;
-}
-.faq-item.active .faq-answer { max-height: 400px; opacity: 1; }
-.faq-answer-inner { padding: 0 0 24px; font-size: 14px; color: var(--text); line-height: 1.7; max-width: 720px; }
 
 /* ── FOOTER ── */
 footer {
