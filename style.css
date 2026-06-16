@@ -222,48 +222,25 @@ p { color: var(--text); }
 
 /* ── SECTION 1: HERO ── */
 #hero {
-  min-height: 100dvh;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-#hero::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 900px;
-  height: 640px;
-  background: radial-gradient(ellipse at center, rgba(124,111,247,0.07) 0%, rgba(58,202,250,0.03) 45%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+  padding-top: 200px;
+  padding-bottom: 160px;
 }
 .hero-inner {
-  max-width: 960px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 0 40px;
-  position: relative;
-  z-index: 1;
-  width: 100%;
 }
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
 }
 .hero-eyebrow {
-  justify-content: center;
   opacity: 0;
   animation: fadeIn 300ms ease 0ms forwards;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
-.hero-headline { margin-bottom: 36px; }
+.hero-headline { margin-bottom: 32px; }
 .hero-headline-line { display: block; overflow: hidden; }
 .hero-headline-line span {
   display: block;
@@ -276,18 +253,17 @@ p { color: var(--text); }
 .hero-headline-line:nth-child(3) span { animation-delay: 390ms; }
 .hero-headline-line:nth-child(4) span { animation-delay: 510ms; }
 .hero-subtext {
-  max-width: 640px;
+  max-width: 560px;
   font-size: 18px;
   line-height: 1.65;
   color: var(--text);
-  margin-bottom: 52px;
+  margin-bottom: 48px;
   opacity: 0;
   animation: fadeSlideUp 500ms ease 750ms forwards;
 }
 .hero-ctas {
   display: flex;
   gap: 16px;
-  justify-content: center;
   opacity: 0;
   animation: fadeSlideUp 500ms ease 900ms forwards;
 }
@@ -1077,11 +1053,8 @@ footer {
   .nav-links { display: none !important; }
   .container, .hero-inner, .nav-inner, .footer-inner { padding-left: 24px; padding-right: 24px; }
   section { padding: 96px 0; }
-  #hero { min-height: auto; padding-top: 140px; padding-bottom: 96px; }
+  #hero { padding-top: 140px; padding-bottom: 96px; }
   .hero-headline, .hero-subtext { width: 100%; max-width: 100%; }
-  .hero-content { text-align: left; align-items: flex-start; }
-  .hero-eyebrow { justify-content: flex-start; }
-  .hero-ctas { justify-content: flex-start; }
   .hero-stats { grid-template-columns: 1fr; padding-top: 40px; gap: 32px; }
   .hero-stat { padding: 0; }
   .hero-stat:nth-child(2) { border-left: none; border-right: none; border-top: 1px solid var(--line); padding: 32px 0 0; }
