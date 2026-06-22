@@ -77,9 +77,7 @@ section { padding: 96px 0; }
 
 /* ── EYEBROW ── */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -356,26 +354,7 @@ section { padding: 96px 0; }
   line-height: 1.75;
   margin-bottom: 28px;
 }
-.quote-card {
-  background: var(--bg-primary);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 12px 12px 0;
-  padding: 20px 24px;
-}
-.quote-card p {
-  font-size: 15px;
-  font-weight: 500;
-  font-style: italic;
-  color: var(--text-heading);
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-.quote-card cite {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  color: var(--text-secondary);
-  font-style: normal;
-}
+
 .pain-title {
   font-family: 'Inter', sans-serif;
   font-size: 11px;
@@ -585,16 +564,12 @@ section { padding: 96px 0; }
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  transition: border-color 200ms;
   cursor: default;
-}
-.modo-card:hover { border-color: var(--accent-mid); }
-.modo-card:nth-child(4) { grid-column: 2 / span 2; }
-.modo-card {
   transition: transform 200ms var(--ease-enter),
               box-shadow 200ms ease,
               border-color 200ms ease;
 }
+.modo-card:nth-child(4) { grid-column: 2 / span 2; }
 .modo-card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 24px rgba(107, 92, 240, 0.10);
@@ -769,12 +744,6 @@ section { padding: 96px 0; }
   font-size: 12px;
   margin-top: 1px;
 }
-.servicio-precio {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent);
-}
 
 /* ── FAQ ── */
 #preguntas { background: var(--bg-primary); }
@@ -922,10 +891,10 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 200ms;
   flex-shrink: 0;
+  transition: transform 200ms var(--ease-enter), opacity 200ms ease;
 }
-.social-icon:hover { transform: scale(1.1) rotate(-5deg); opacity: 1; }
+.social-icon:hover { transform: scale(1.1) rotate(-5deg); }
 .social-icon svg { width: 18px; height: 18px; fill: #fff; display: block; }
 .footer-bottom {
   max-width: 1080px;
@@ -959,15 +928,8 @@ footer {
   box-shadow: 0 2px 16px rgba(107, 92, 240, 0.06);
 }
 
-/* ── MOTION: SOCIAL ICONS ── */
-.social-icon {
-  transition: transform 200ms var(--ease-enter), opacity 200ms ease;
-}
-
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 56px; }
-  .hero-visual { max-width: 480px; }
   .lideres-layout { grid-template-columns: 1fr; gap: 40px; }
   .problema-cols { gap: 48px; }
 }
@@ -990,8 +952,7 @@ footer {
   .modos-grid .modo-card.modo-featured { grid-column: 1 / -1; }
   .servicios-grid { grid-template-columns: 1fr; }
   .lideres-layout { grid-template-columns: 1fr; }
-  .hero-cards-grid { grid-template-columns: 1fr 1fr; }
-  .hero-ctas { flex-direction: column; }
+  .hero-ctas { flex-direction: column; align-items: center; }
   .footer-main { grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
   .footer-nav { gap: 32px; }
   .footer-bottom { padding: 28px 20px 0; }
