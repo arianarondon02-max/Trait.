@@ -39,11 +39,11 @@ h1, h2, h3, h4,
 }
 
 h1 {
-  font-size: clamp(34px, 4vw, 54px);
+  font-size: clamp(42px, 5.5vw, 80px);
   font-weight: 700;
   color: var(--text-heading);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 h2 {
   font-size: clamp(26px, 3vw, 38px);
@@ -273,7 +273,7 @@ section { padding: 96px 0; }
   padding-bottom: 96px;
 }
 .hero-inner {
-  max-width: 680px;
+  max-width: 820px;
   margin: 0 auto;
   padding: 0 48px;
   text-align: center;
@@ -281,12 +281,12 @@ section { padding: 96px 0; }
 .hero-pill { margin-bottom: 28px; }
 .hero-headline { margin: 0 0 24px; }
 .hero-sub {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 400;
   color: var(--text-secondary);
-  max-width: 520px;
+  max-width: 600px;
   line-height: 1.7;
-  margin: 0 auto 40px;
+  margin: 0 auto 48px;
 }
 .hero-ctas {
   display: flex;
