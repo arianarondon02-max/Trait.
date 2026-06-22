@@ -88,15 +88,7 @@ section { padding: 96px 0; }
   color: var(--accent);
   margin-bottom: 20px;
 }
-.eyebrow::before {
-  content: '';
-  display: block;
-  width: 16px;
-  height: 1.5px;
-  background: var(--accent);
-  border-radius: 2px;
-  flex-shrink: 0;
-}
+
 
 .section-sub {
   font-size: 17px;
