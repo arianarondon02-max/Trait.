@@ -1,3 +1,9 @@
+// ── NAV SCROLL STATE ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+}, { passive: true });
+
 // ── NAV ACTIVE LINK ──
 const navLinks = document.querySelectorAll('.nav-links a');
 const navSections = ['como-funciona', 'modos', 'servicios', 'preguntas'];
@@ -17,6 +23,15 @@ navSections.forEach(id => {
   if (el) sectionObs.observe(el);
 });
 
+// ── HERO HEADLINE STAGGER ──
+const heroHeadline = document.querySelector('.hero-headline');
+if (heroHeadline) {
+  const parts = heroHeadline.innerHTML.split('<br>').map(s => s.trim()).filter(Boolean);
+  heroHeadline.innerHTML = parts
+    .map((part, i) => `<span class="hero-line" style="--line-index:${i}">${part}</span>`)
+    .join('');
+}
+
 // ── SCROLL REVEAL ──
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -25,9 +40,11 @@ const revealObs = new IntersectionObserver((entries) => {
       revealObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+document.querySelectorAll(
+  '.reveal, .reveal-left, .reveal-right, .reveal-scale, .fase-connector'
+).forEach(el => revealObs.observe(el));
 
 // ── COUNT-UP ──
 function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
@@ -62,5 +79,19 @@ document.querySelectorAll('.faq-item').forEach(item => {
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ── BUTTON CLICK SCALE ──
+document.querySelectorAll('.btn-primary, .btn-ghost, .btn-nav-cta').forEach(btn => {
+  btn.addEventListener('pointerdown', function () {
+    this.style.transform = 'scale(0.97)';
+    this.style.transitionDuration = '100ms';
+  });
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach(evt => {
+    btn.addEventListener(evt, function () {
+      this.style.transform = '';
+      this.style.transitionDuration = '';
+    });
   });
 });
