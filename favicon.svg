@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <text
+    x="16" y="25"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+    font-size="26"
+    font-weight="700"
+    letter-spacing="-0.5"
+  ><tspan fill="#0F0E17">t</tspan><tspan fill="#6B5CF0">.</tspan></text>
+</svg>
