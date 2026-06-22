@@ -24,9 +24,8 @@ navSections.forEach(id => {
 });
 
 // ── HERO HEADLINE STAGGER ──
-// Only splits if .hero-line spans are not already defined in HTML.
 const heroHeadline = document.querySelector('.hero-headline');
-if (heroHeadline && !heroHeadline.querySelector('.hero-line')) {
+if (heroHeadline) {
   const parts = heroHeadline.innerHTML.split('<br>').map(s => s.trim()).filter(Boolean);
   heroHeadline.innerHTML = parts
     .map((part, i) => `<span class="hero-line" style="--line-index:${i}">${part}</span>`)
