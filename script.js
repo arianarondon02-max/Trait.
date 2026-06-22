@@ -40,7 +40,7 @@ const revealObs = new IntersectionObserver((entries) => {
       revealObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 
 document.querySelectorAll(
   '.reveal, .reveal-left, .reveal-right, .reveal-scale, .fase-connector'
@@ -75,23 +75,16 @@ document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
 // ── FAQ ACCORDION ──
 document.querySelectorAll('.faq-item').forEach(item => {
-  item.querySelector('.faq-q').addEventListener('click', () => {
+  const btn = item.querySelector('.faq-q');
+  btn.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-
-// ── BUTTON CLICK SCALE ──
-document.querySelectorAll('.btn-primary, .btn-ghost, .btn-nav-cta').forEach(btn => {
-  btn.addEventListener('pointerdown', function () {
-    this.style.transform = 'scale(0.97)';
-    this.style.transitionDuration = '100ms';
-  });
-  ['pointerup', 'pointerleave', 'pointercancel'].forEach(evt => {
-    btn.addEventListener(evt, function () {
-      this.style.transform = '';
-      this.style.transitionDuration = '';
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   });
 });
