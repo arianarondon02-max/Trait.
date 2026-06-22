@@ -73,6 +73,22 @@ const countObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
 
+// ── HERO VISUAL: MODE HOVER ──
+const insightText = document.querySelector('.hv-insight-text');
+if (insightText) {
+  const defaultMsg = 'Pasá el cursor sobre un modo para ver el insight →';
+  document.querySelectorAll('.hv-mode-row').forEach(row => {
+    row.addEventListener('mouseenter', () => {
+      insightText.textContent = row.dataset.insight;
+      insightText.classList.add('active');
+    });
+    row.addEventListener('mouseleave', () => {
+      insightText.textContent = defaultMsg;
+      insightText.classList.remove('active');
+    });
+  });
+}
+
 // ── FAQ ACCORDION ──
 document.querySelectorAll('.faq-item').forEach(item => {
   const btn = item.querySelector('.faq-q');
