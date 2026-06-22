@@ -291,111 +291,21 @@ section { padding: 96px 0; }
   padding: 0 48px;
   text-align: center;
 }
-.hero-sub { max-width: 560px; margin-left: auto; margin-right: auto; }
-.hero-ctas { justify-content: center; }
-.hero-pill {
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: fadeUp 500ms ease 0ms forwards;
-}
-.hero-headline {
-  margin: 0 0 24px;
-  opacity: 0;
-  animation: fadeUp 700ms ease 100ms forwards;
-}
+.hero-pill { margin-bottom: 24px; }
+.hero-headline { margin: 0 0 24px; }
 .hero-sub {
   font-size: 17px;
   font-weight: 400;
   color: var(--text-body);
-  max-width: 480px;
+  max-width: 560px;
   line-height: 1.7;
-  margin-bottom: 36px;
-  opacity: 0;
-  animation: fadeUp 700ms ease 220ms forwards;
+  margin: 0 auto 36px;
 }
 .hero-ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 700ms ease 340ms forwards;
-}
-.hero-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0;
-  animation: fadeUp 800ms ease 280ms forwards;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Hero cards */
-.hero-card-featured {
-  background: var(--bg-tertiary);
-  border: 1.5px solid var(--accent-pale);
-  border-radius: 16px;
-  padding: 22px 24px;
-}
-.hero-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-.mode-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.mode-badge {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--accent);
-  background: var(--bg-primary);
-  border: 1px solid var(--accent-pale);
-  border-radius: 999px;
-  padding: 3px 10px;
-}
-.hero-card-text {
-  font-size: 13.5px;
-  color: var(--text-body);
-  line-height: 1.6;
-}
-.hero-cards-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.hero-card-small {
-  background: var(--bg-primary);
-  border: 1px solid var(--accent-pale);
-  border-radius: 14px;
-  padding: 16px 18px;
-  transition: border-color 200ms;
-}
-.hero-card-small:hover { border-color: var(--accent-mid); }
-.mode-num-small {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-.hero-card-small p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.55;
+  justify-content: center;
 }
 
 /* ── STATS ── */
