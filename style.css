@@ -295,14 +295,13 @@ section { padding: 96px 0; }
   padding-bottom: 80px;
 }
 .hero-inner {
-  max-width: 1080px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 48px;
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 72px;
-  align-items: start;
+  text-align: center;
 }
+.hero-sub { max-width: 560px; margin-left: auto; margin-right: auto; }
+.hero-ctas { justify-content: center; }
 .hero-pill {
   margin-bottom: 24px;
   opacity: 0;
