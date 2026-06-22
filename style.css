@@ -278,7 +278,6 @@ section { padding: 96px 0; }
   transition: background-position 300ms var(--ease-enter);
 }
 .btn-nav-cta:hover { background-position: left bottom; }
-.btn-nav-cta:hover { background: var(--accent-mid); }
 
 /* ── HERO ── */
 #hero {
@@ -487,10 +486,11 @@ section { padding: 96px 0; }
   align-items: flex-start;
 }
 .pain-list li::before {
-  content: "—";
+  content: "→";
   color: var(--accent);
   flex-shrink: 0;
-  font-weight: 600;
+  font-size: 12px;
+  margin-top: 2px;
 }
 
 /* ── INSIGHT ── */
