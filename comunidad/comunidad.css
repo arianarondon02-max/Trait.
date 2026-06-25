@@ -1,0 +1,115 @@
+/* ── COMUNIDAD PAGE ── */
+
+.comunidad-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 140px 48px 80px;
+  align-items: center;
+}
+
+/* ── LEFT: TEXT ── */
+.comunidad-hero__left { min-width: 0; }
+
+.comunidad-hero__heading {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 8px 0 20px;
+}
+
+.comunidad-hero__sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+/* ── RIGHT: FORM ── */
+.comunidad-hero__right { min-width: 0; }
+
+.comunidad-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: 0.01em;
+}
+
+.form-group input {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-body);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: border-color 200ms var(--ease-enter), box-shadow 200ms var(--ease-enter);
+  outline: none;
+  width: 100%;
+}
+
+.form-group input::placeholder {
+  color: var(--text-disabled);
+}
+
+.form-group input:focus {
+  border-color: var(--accent-mid);
+  box-shadow: 0 0 0 3px rgba(107, 92, 240, 0.10);
+}
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 13px 24px;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background 200ms var(--ease-enter), transform 150ms var(--ease-enter);
+}
+
+.form-submit:hover { background: #5A4DE0; }
+.form-submit:active { transform: scale(0.98); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .comunidad-hero {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 112px 20px 64px;
+  }
+  .comunidad-hero__sub { max-width: 100%; }
+  .form-row { grid-template-columns: 1fr; gap: 16px; }
+}

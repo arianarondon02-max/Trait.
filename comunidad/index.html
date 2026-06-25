@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trait Comunidad</title>
+  <meta name="description" content="Completá el formulario y nos ponemos en contacto para potenciar tu equipo con Trait.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="comunidad.css">
+</head>
+<body class="comunidad-page">
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="/" class="wordmark">trait<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="/#como-funciona">Cómo funciona</a></li>
+        <li><a href="/#modos">Los modos</a></li>
+        <li><a href="/#servicios">Servicios</a></li>
+        <li><a href="/#preguntas">Preguntas</a></li>
+        <li><a href="/comunidad" class="nav-link-community active">Trait Comunidad</a></li>
+      </ul>
+      <a href="/#cta-final" class="btn-nav-cta">Hablemos <span class="btn-arrow">→</span></a>
+    </div>
+  </nav>
+
+  <!-- HERO SPLIT -->
+  <main class="comunidad-hero">
+
+    <div class="comunidad-hero__left">
+      <span class="eyebrow">Trait Comunidad</span>
+      <h1 class="comunidad-hero__heading">
+        Queremos ayudarte a llevar<br>
+        tu equipo al<br>
+        <span class="accent-text">próximo nivel.</span>
+      </h1>
+      <p class="comunidad-hero__sub">
+        ¿Listo para potenciar tu equipo? Completá el formulario
+        y nos pondremos en contacto.
+      </p>
+    </div>
+
+    <div class="comunidad-hero__right">
+      <form class="comunidad-form" action="#" method="POST">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Apellido" autocomplete="family-name" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" autocomplete="organization" />
+        </div>
+
+        <div class="form-group">
+          <label for="personas">Cantidad de personas en la empresa</label>
+          <input type="number" id="personas" name="personas" placeholder="Ej: 50" min="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="web">Página web</label>
+          <input type="url" id="web" name="web" placeholder="https://" autocomplete="url" />
+        </div>
+
+        <div class="form-group">
+          <label for="industria">Industria</label>
+          <input type="text" id="industria" name="industria" placeholder="Ej: Salud, Educación, Retail" />
+        </div>
+
+        <div class="form-group">
+          <label for="pais">País</label>
+          <input type="text" id="pais" name="pais" placeholder="País" autocomplete="country-name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@empresa.com" autocomplete="email" />
+        </div>
+
+        <button type="submit" class="form-submit">
+          Quiero unirme a la comunidad <span class="btn-arrow">→</span>
+        </button>
+
+      </form>
+    </div>
+
+  </main>
+
+</body>
+</html>
