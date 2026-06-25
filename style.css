@@ -242,7 +242,24 @@ section { padding: 96px 0; }
 }
 .nav-links a:hover { color: var(--text-heading); background: var(--bg-tertiary); }
 .nav-links a.active { color: var(--accent); background: var(--bg-secondary); }
-.nav-link-community { color: var(--accent) !important; }
+.nav-link-community {
+  color: rgb(61, 61, 78);
+  font-size: 13.5px;
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav-link-community:hover {
+  background: rgb(245, 244, 253);
+  color: rgb(107, 92, 240);
+}
+.nav-link-community.active {
+  background: rgb(245, 244, 253);
+  color: rgb(107, 92, 240);
+}
 .btn-nav-cta {
   display: inline-flex;
   align-items: center;
