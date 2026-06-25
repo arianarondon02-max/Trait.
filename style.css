@@ -242,6 +242,7 @@ section { padding: 96px 0; }
 }
 .nav-links a:hover { color: var(--text-heading); background: var(--bg-tertiary); }
 .nav-links a.active { color: var(--accent); background: var(--bg-secondary); }
+.nav-link-community { color: var(--accent) !important; }
 .btn-nav-cta {
   display: inline-flex;
   align-items: center;
