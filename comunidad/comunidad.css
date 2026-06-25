@@ -1,115 +1,187 @@
-/* ── COMUNIDAD PAGE ── */
-
-.comunidad-hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 140px 48px 80px;
-  align-items: center;
+/* ============================================
+   VARIABLES (mismos tokens que el sitio)
+   ============================================ */
+:root {
+  --color-accent:        #6B5CF0;
+  --color-accent-light:  #EBE9FC;
+  --color-accent-border: #E8E6F5;
+  --color-bg-white:      #FFFFFF;
+  --color-text-main:     #0F0E17;
+  --color-text-muted:    #6E6D7A;
+  --font-heading:        'Satoshi', sans-serif;
+  --font-body:           'Inter', system-ui, sans-serif;
+  --radius-card:         12px;
+  --radius-pill:         999px;
 }
 
-/* ── LEFT: TEXT ── */
-.comunidad-hero__left { min-width: 0; }
+/* ============================================
+   FONDO DEGRADADO (inspirado en la imagen)
+   Se reemplaza el fondo blanco por un gradiente
+   púrpura → rosa → melocotón, usando los
+   colores de Trait como base
+   ============================================ */
+.comunidad-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #f0eeff 0%,       /* lavender muy claro (paleta Trait) */
+    #d4caff 25%,      /* púrpura suave */
+    #c5b8f8 45%,      /* púrpura medio */
+    #e0c4f0 65%,      /* lila rosado */
+    #f5dde8 85%,      /* rosado claro */
+    #fce8dc 100%      /* melocotón */
+  );
+}
+
+/* ============================================
+   HERO LAYOUT — split en dos columnas
+   ============================================ */
+.comunidad-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  min-height: 100vh;
+  align-items: center;
+  padding: 7rem 4rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .comunidad-hero {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 3rem;
+  }
+}
+
+/* ============================================
+   LADO IZQUIERDO — Texto
+   ============================================ */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
 
 .comunidad-hero__heading {
-  font-family: 'Satoshi', sans-serif;
-  font-size: clamp(32px, 3.5vw, 50px);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 700;
-  color: var(--text-heading);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin: 8px 0 20px;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.accent-text {
+  color: var(--color-accent);
 }
 
 .comunidad-hero__sub {
-  font-size: 16px;
-  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
   line-height: 1.7;
-  max-width: 380px;
+  max-width: 460px;
 }
 
-/* ── RIGHT: FORM ── */
-.comunidad-hero__right { min-width: 0; }
+/* ============================================
+   LADO DERECHO — Formulario card
+   ============================================ */
+.comunidad-hero__right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 .comunidad-form {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 0.625px solid rgba(232, 230, 245, 0.8);
+  border-radius: 20px;
+  padding: 2rem 2.25rem;
+  width: 100%;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1.1rem;
+  box-shadow: 0 8px 32px rgba(107, 92, 240, 0.08);
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 1rem;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.4rem;
 }
 
 .form-group label {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-heading);
-  letter-spacing: 0.01em;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-main);
 }
 
 .form-group input {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
-  color: var(--text-body);
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
+  color: var(--color-text-main);
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.625px solid var(--color-accent-border);
   border-radius: 8px;
   padding: 10px 14px;
-  transition: border-color 200ms var(--ease-enter), box-shadow 200ms var(--ease-enter);
   outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input::placeholder {
-  color: var(--text-disabled);
+  color: #C4C3CC;
 }
 
 .form-group input:focus {
-  border-color: var(--accent-mid);
-  box-shadow: 0 0 0 3px rgba(107, 92, 240, 0.10);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(107, 92, 240, 0.12);
+  background: #ffffff;
 }
 
 .form-submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: var(--accent);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+  width: 100%;
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  border-radius: 8px;
-  padding: 13px 24px;
-  border: none;
   cursor: pointer;
-  margin-top: 4px;
-  transition: background 200ms var(--ease-enter), transform 150ms var(--ease-enter);
+  margin-top: 0.5rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  letter-spacing: 0.01em;
 }
 
-.form-submit:hover { background: #5A4DE0; }
-.form-submit:active { transform: scale(0.98); }
+.form-submit:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
 
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-  .comunidad-hero {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 112px 20px 64px;
-  }
-  .comunidad-hero__sub { max-width: 100%; }
-  .form-row { grid-template-columns: 1fr; gap: 16px; }
+/* ============================================
+   NAV OVERRIDE en la página comunidad
+   ============================================ */
+.comunidad-page .nav-link-community {
+  background: rgb(245, 244, 253);
+  color: rgb(107, 92, 240);
 }
