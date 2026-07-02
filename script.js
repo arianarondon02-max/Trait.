@@ -95,8 +95,7 @@ function initMotion() {
     .from('#hero .eyebrow',       { y: 14, opacity: 0, duration: 0.7  }, 0.1)
     .from('#hero h1',             { y: 40, opacity: 0, duration: 1.1  }, 0.28)
     .from('#hero .hero-sub',      { y: 24, opacity: 0, duration: 0.95 }, 0.52)
-    .from('#hero .hero-center .btn-hablemos', { y: 16, opacity: 0, scale: 0.97, duration: 0.85 }, 0.70)
-    .from('.scroll-indicator',              { opacity: 0, duration: 0.6 }, 1.1);
+    .from('.scroll-indicator', { opacity: 0, duration: 0.6 }, 1.1);
 
   // ── HELPERS ───────────────────────────────────────────
 
