@@ -48,7 +48,8 @@ body {
   color: var(--text-secondary);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.7;
+  font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -63,7 +64,7 @@ h1 {
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 700;
   color: var(--text);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
 }
 h2 {
@@ -71,7 +72,7 @@ h2 {
   font-size: clamp(28px, 3.5vw, 32px);
   font-weight: 600;
   color: var(--text);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.25;
 }
 h3 {
@@ -86,10 +87,10 @@ h3 {
 
 .body-lg {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
 }
-.body-md { font-size: 16px; line-height: 1.65; }
+.body-md { font-size: 16px; line-height: 1.7; }
 
 .text-primary     { color: var(--primary); }
 .text-primary-dim { color: var(--primary-dim); }
@@ -213,10 +214,25 @@ main { position: relative; overflow: hidden; }
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: background 200ms, box-shadow 200ms, transform 150ms;
+  position: relative;
+  overflow: hidden;
+  transition: background 220ms, box-shadow 220ms, transform 150ms;
 }
-.btn-primary:hover { background: var(--primary-hover); box-shadow: 0 4px 20px rgba(85,60,226,0.3); }
-.btn-primary:active { transform: scale(0.95); }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.16) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 520ms var(--ease-enter);
+  pointer-events: none;
+}
+.btn-primary:hover::after { transform: translateX(100%); }
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 2px 8px rgba(85,60,226,0.22), 0 8px 28px rgba(85,60,226,0.22);
+}
+.btn-primary:active { transform: scale(0.96); filter: brightness(0.92); }
 
 .btn-lg { padding: 16px 32px; font-size: 15px; }
 
@@ -235,9 +251,14 @@ main { position: relative; overflow: hidden; }
   text-decoration: none;
   border: 1px solid var(--border-strong);
   cursor: pointer;
-  transition: background 200ms, color 200ms;
+  transition: background 200ms, color 200ms, border-color 200ms, box-shadow 200ms, transform 150ms;
 }
-.btn-ghost:hover { background: var(--bg-container); color: var(--text); }
+.btn-ghost:hover {
+  background: var(--bg-container);
+  color: var(--text);
+  border-color: rgba(120,117,135,0.45);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
 .btn-ghost:active { transform: scale(0.97); }
 
 .btn-arrow {
@@ -302,9 +323,25 @@ main { position: relative; overflow: hidden; }
   letter-spacing: 0.04em;
   transition: color 200ms, background 200ms;
   white-space: nowrap;
+  position: relative;
 }
-.nav-link:hover  { color: var(--primary); }
-.nav-link.active { color: var(--primary); border-bottom: 2px solid var(--primary); border-radius: 0; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 220ms var(--ease-enter);
+}
+.nav-link:hover { color: var(--primary); }
+.nav-link:hover::after { transform: scaleX(0.65); }
+.nav-link.active { color: var(--primary); }
+.nav-link.active::after { transform: scaleX(1); }
 
 /* ══════════════════════════════════════════════════
    HERO
@@ -368,6 +405,7 @@ main { position: relative; overflow: hidden; }
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+  font-feature-settings: 'tnum' 1;
 }
 .stat-label {
   font-size: 14px;
@@ -418,8 +456,10 @@ main { position: relative; overflow: hidden; }
   align-items: center;
   padding: 48px 0;
   cursor: default;
-  transition: background 200ms;
+  border-radius: 6px;
+  transition: background 250ms;
 }
+.metodo-step:hover { background: rgba(85,60,226,0.03); }
 .metodo-step:hover .metodo-num { color: var(--primary); }
 
 .metodo-num {
@@ -453,6 +493,7 @@ main { position: relative; overflow: hidden; }
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10), 0 16px 48px rgba(0,0,0,0.08);
 }
 .metodo-conclusion p {
   font-family: var(--font-display);
@@ -483,12 +524,14 @@ main { position: relative; overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: background 200ms, border-color 200ms, transform 200ms;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 250ms, border-color 250ms, transform 250ms, box-shadow 250ms;
 }
 .comunidad-card:hover {
   background: rgba(255,255,255,0.18);
-  border-color: rgba(255,255,255,0.22);
-  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.26);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.14);
 }
 .comunidad-card p { color: rgba(255,255,255,0.75); flex: 1; }
 .comunidad-link {
@@ -555,11 +598,13 @@ footer {
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255,0.45);
-  transition: background 200ms, color 200ms;
+  transition: background 200ms, color 200ms, border-color 200ms, transform 200ms;
 }
 .social-icon:hover {
   background: rgba(255,255,255,0.10);
   color: rgba(255,255,255,0.90);
+  border-color: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
 }
 .social-icon svg { width: 16px; height: 16px; display: block; }
 
@@ -577,8 +622,23 @@ footer {
   color: rgba(255,255,255,0.45);
   text-decoration: none;
   transition: color 200ms;
+  position: relative;
+  display: inline-block;
+}
+.footer-nav-col a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.55);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms var(--ease-enter);
 }
 .footer-nav-col a:hover { color: rgba(255,255,255,0.90); }
+.footer-nav-col a:hover::after { transform: scaleX(1); }
 
 .footer-bottom {
   max-width: 1280px;
