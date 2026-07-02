@@ -1,38 +1,37 @@
 // ── NAV SCROLL STATE ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+  if (window.scrollY > 50) {
+    nav.classList.add('nav-scrolled');
+    nav.style.background = 'rgba(252,249,248,0.97)';
+  } else {
+    nav.classList.remove('nav-scrolled');
+    nav.style.background = 'rgba(252,249,248,0.85)';
+  }
 }, { passive: true });
 
 // ── NAV ACTIVE LINK ──
-const navLinks = document.querySelectorAll('.nav-links a');
-const navSections = ['que-es', 'metodo', 'comunidad-section'];
+const navLinks = document.querySelectorAll('.nav-link');
+const navSections = ['que-es', 'metodo', 'comunidad'];
 
 const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(
-        `.nav-links a[href="#${entry.target.id}"], .nav-links a[href="/#${entry.target.id}"]`
-      );
+      navLinks.forEach(l => {
+        l.classList.remove('active');
+        l.style.borderBottom = '';
+        l.style.borderRadius = '';
+      });
+      const link = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
       if (link) link.classList.add('active');
     }
   });
-}, { threshold: 0.25 });
+}, { threshold: 0.35 });
 
 navSections.forEach(id => {
   const el = document.getElementById(id);
   if (el) sectionObs.observe(el);
 });
-
-// ── HERO HEADLINE STAGGER ──
-const heroHeadline = document.querySelector('.hero-headline');
-if (heroHeadline) {
-  const parts = heroHeadline.innerHTML.split('<br>').map(s => s.trim()).filter(Boolean);
-  heroHeadline.innerHTML = parts
-    .map((part, i) => `<span class="hero-line" style="--line-index:${i}">${part}</span>`)
-    .join('');
-}
 
 // ── SCROLL REVEAL ──
 const revealObs = new IntersectionObserver((entries) => {
@@ -44,9 +43,7 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-  revealObs.observe(el);
-});
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 // ── COUNT-UP ──
 function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
@@ -74,3 +71,14 @@ const countObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+// ── SMOOTH SCROLL FOR ANCHOR LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
