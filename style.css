@@ -270,7 +270,9 @@ main { position: relative; overflow: hidden; }
   pointer-events: none;
 }
 .nav-floating {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  max-width: 920px;
   align-items: center;
   gap: 2px;
   background: rgba(252,249,248,0.88);
@@ -324,7 +326,7 @@ main { position: relative; overflow: hidden; }
   padding: 8px 16px;
   font-size: 13px;
   border-radius: 6px;
-  margin-left: 4px;
+  margin-left: auto;
 }
 
 /* ══════════════════════════════════════════════════
