@@ -19,10 +19,20 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-floating">
-    <a href="/" class="wordmark">trait.</a>
+    <a href="/" class="wordmark">trait<span class="wordmark-dot">.</span></a>
     <span class="nav-sep" aria-hidden="true"></span>
     <ul class="nav-links">
-      <li><a href="#metodo" class="nav-link">IA Adoption Intelligence</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Soluciones
+          <svg class="dropdown-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="#metodo" class="nav-dropdown-item" role="menuitem">AI Readiness Intelligence</a>
+          <a href="#metodo" class="nav-dropdown-item" role="menuitem">AI Adoption Blueprint</a>
+          <a href="#metodo" class="nav-dropdown-item" role="menuitem">AI Transformation Lab</a>
+        </div>
+      </li>
       <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
     </ul>
     <a href="mailto:hola@trait-app.com" class="btn-primary nav-cta">Hablemos</a>

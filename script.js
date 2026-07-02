@@ -21,6 +21,29 @@ const sectionObs = new IntersectionObserver((entries) => {
   if (el) sectionObs.observe(el);
 });
 
+// ── NAV DROPDOWN ──────────────────────────────────────
+const dropToggle = document.querySelector('.nav-dropdown-toggle');
+const dropMenu   = document.querySelector('.nav-dropdown-menu');
+if (dropToggle && dropMenu) {
+  dropToggle.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = dropToggle.getAttribute('aria-expanded') === 'true';
+    dropToggle.setAttribute('aria-expanded', String(!open));
+    dropMenu.classList.toggle('is-open', !open);
+  });
+  document.addEventListener('click', () => {
+    dropToggle.setAttribute('aria-expanded', 'false');
+    dropMenu.classList.remove('is-open');
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      dropToggle.setAttribute('aria-expanded', 'false');
+      dropMenu.classList.remove('is-open');
+      dropToggle.focus();
+    }
+  });
+}
+
 // ── SCROLL INDICATOR FADE ─────────────────────────────
 const scrollInd = document.querySelector('.scroll-indicator');
 if (scrollInd) {
