@@ -62,12 +62,12 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
 
 function initMotion() {
 
-  // ── HERO ENTRANCE — cinematic reveal ─────────────────
-  gsap.timeline({ defaults: { ease: 'power2.out' } })
-    .from('#hero .eyebrow',      { y: 12, opacity: 0, duration: 0.9  }, 0.1)
-    .from('#hero h1',            { y: 20, opacity: 0, duration: 1.2  }, 0.28)
-    .from('#hero .hero-sub',     { y: 18, opacity: 0, duration: 1.05 }, 0.55)
-    .from('#hero .hero-cta-link',{ y: 14, opacity: 0, duration: 0.9  }, 0.78);
+  // ── HERO ENTRANCE ────────────────────────────────────
+  gsap.timeline({ defaults: { ease: 'power3.out' } })
+    .from('#hero .eyebrow',      { y: 14, opacity: 0, duration: 0.7  }, 0.1)
+    .from('#hero h1',            { y: 40, opacity: 0, duration: 1.1  }, 0.25)
+    .from('#hero .hero-sub',     { y: 24, opacity: 0, duration: 0.95 }, 0.5)
+    .from('#hero .hero-cta-link',{ y: 16, opacity: 0, duration: 0.8  }, 0.68);
 
   // ── HELPERS ───────────────────────────────────────────
 

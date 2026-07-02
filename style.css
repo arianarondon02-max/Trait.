@@ -69,11 +69,11 @@ h1 {
 }
 h2 {
   font-family: var(--font-display);
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 700;
+  font-size: clamp(28px, 3.5vw, 32px);
+  font-weight: 600;
   color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1.12;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 h3 {
   font-family: var(--font-body);
@@ -86,11 +86,11 @@ h3 {
 }
 
 .body-lg {
-  font-size: 20px;
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.6;
   font-weight: 400;
 }
-.body-md { font-size: 18px; line-height: 1.7; }
+.body-md { font-size: 16px; line-height: 1.6; }
 
 .text-primary     { color: var(--primary); }
 .text-primary-dim { color: var(--primary-dim); }
@@ -100,11 +100,11 @@ h3 {
    LAYOUT
 ══════════════════════════════════════════════════ */
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 48px;
 }
-section { padding: 160px 0; }
+section { padding: 120px 0; }
 main { position: relative; overflow: hidden; }
 
 /* Editorial 2-col grid */
@@ -235,16 +235,15 @@ main { position: relative; overflow: hidden; }
   pointer-events: none;
 }
 .nav-floating {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 2px;
-  width: min(900px, calc(100% - 48px));
   background: rgba(252,249,248,0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid #e5e5e5;
   border-radius: 12px;
-  padding: 6px 8px 6px 24px;
+  padding: 6px 6px 6px 16px;
   pointer-events: auto;
   transition: background 200ms var(--ease-enter);
 }
@@ -253,8 +252,7 @@ main { position: relative; overflow: hidden; }
   width: 1px;
   height: 14px;
   background: var(--border);
-  margin: 0 8px 0 10px;
-  margin-right: auto;
+  margin: 0 10px;
   flex-shrink: 0;
 }
 .wordmark {
@@ -298,15 +296,10 @@ main { position: relative; overflow: hidden; }
 #hero {
   position: relative;
   z-index: 1;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 112px;
-  padding-bottom: 80px;
-  background: radial-gradient(ellipse 80% 60% at 50% 42%, #eeecf6 0%, #fcf9f8 70%);
+  padding-top: 184px;
+  padding-bottom: 160px;
 }
-#hero .container { max-width: 720px; width: 100%; }
+#hero .container { max-width: 720px; }
 .hero-center {
   display: flex;
   flex-direction: column;
@@ -364,24 +357,24 @@ main { position: relative; overflow: hidden; }
 .stat-block:last-child { padding-right: 0; padding-left: 32px; }
 .stat-divider {
   width: 1px;
-  height: 180px;
+  height: 120px;
   background: var(--on-dark-border);
   align-self: start;
   margin-top: 8px;
 }
 .stat-num {
   font-family: var(--font-display);
-  font-size: clamp(72px, 10vw, 120px);
+  font-size: clamp(48px, 7vw, 72px);
   font-weight: 700;
   color: var(--primary-dim);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   line-height: 1;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: block;
   font-feature-settings: 'tnum' 1;
 }
 .stat-label {
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(255,255,255,0.45);
   line-height: 1.65;
   max-width: 230px;
@@ -394,8 +387,8 @@ main { position: relative; overflow: hidden; }
 .section-accent .body-lg { color: rgba(255,255,255,0.80); }
 
 /* ── CTA FINAL ── */
-.section-cta { padding: 160px 0; }
-.section-cta h2 { max-width: 860px; margin: 0 auto 48px; }
+.section-cta { padding: 120px 0; }
+.section-cta h2 { max-width: 800px; margin: 0 auto 40px; }
 .section-cta .btn-primary { margin: 0 auto; }
 
 /* ══════════════════════════════════════════════════
@@ -406,12 +399,12 @@ main { position: relative; overflow: hidden; }
   padding-top: 48px;
   border-top: 1px solid rgba(85,60,226,0.15);
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-size: clamp(18px, 2vw, 24px);
   font-weight: 600;
   font-style: italic;
   color: var(--primary);
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
 }
 
 /* ══════════════════════════════════════════════════
@@ -451,9 +444,9 @@ main { position: relative; overflow: hidden; }
   line-height: 1.5;
 }
 .metodo-desc p {
-  font-size: 18px;
+  font-size: 15px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .metodo-conclusion {
@@ -470,10 +463,10 @@ main { position: relative; overflow: hidden; }
 }
 .metodo-conclusion p {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.8vw, 32px);
+  font-size: clamp(20px, 2.5vw, 26px);
   font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
   color: inherit;
 }
 
@@ -675,29 +668,26 @@ footer {
   #nav { top: 12px; padding: 0 16px; }
   .nav-sep,
   .nav-links { display: none; }
-  .nav-floating { width: calc(100% - 32px); padding: 6px 8px 6px 16px; gap: 4px; }
+  .nav-floating { padding: 6px 6px 6px 14px; gap: 4px; }
 
   /* ── Hero ── */
-  #hero { min-height: 85vh; padding-top: 96px; padding-bottom: 64px; }
-  .hero-sub { font-size: 17px; }
+  #hero { padding-top: 112px; padding-bottom: 88px; }
+  .hero-sub { font-size: 16px; }
 
   /* ── Typography ── */
-  h2 { font-size: clamp(32px, 8vw, 48px); }
   h3 { font-size: 20px; }
-  .body-lg { font-size: 17px; }
-  .body-md { font-size: 16px; }
+  .body-lg { font-size: 16px; }
 
   /* ── Stats ── */
   .stats-header { margin-bottom: 56px; }
   .stats-row {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
     padding-top: 40px;
   }
   .stat-divider { display: none; }
   .stat-block,
   .stat-block:last-child { padding: 0; }
-  .stat-num { font-size: clamp(64px, 18vw, 96px); }
 
   /* ── Método ── */
   .metodo-head { margin-bottom: 48px; }
@@ -721,7 +711,7 @@ footer {
   .comunidad-card  { padding: 28px; }
 
   /* ── CTA final ── */
-  .section-cta { padding: 96px 0; }
+  .section-cta { padding: 72px 0; }
 
   /* ── Footer ── */
   .footer-inner { grid-template-columns: 1fr 1fr; padding: 0 20px 56px; }
@@ -741,7 +731,7 @@ footer {
   .nav-cta { padding: 7px 12px; }
 
   /* Estadísticas */
-  .stat-num { font-size: clamp(56px, 16vw, 80px); }
+  .stat-num { font-size: clamp(40px, 13vw, 56px); }
 
   /* Método conclusion */
   .metodo-conclusion { padding: 28px 20px; }
