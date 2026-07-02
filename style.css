@@ -224,6 +224,52 @@ main { position: relative; overflow: hidden; }
 
 .btn-lg { padding: 14px 28px; font-size: 15px; }
 
+.btn-hablemos {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+  padding: 0 0 0 18px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.08);
+  transition: opacity 200ms var(--ease-enter), transform 150ms var(--ease-enter);
+}
+.btn-hablemos:hover { opacity: 0.88; transform: translateY(-1px); }
+
+.btn-label {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--on-primary);
+}
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: white;
+  opacity: 0.16;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--on-primary);
+}
+
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -270,11 +316,9 @@ main { position: relative; overflow: hidden; }
   pointer-events: none;
 }
 .nav-floating {
-  display: flex;
-  width: 100%;
-  max-width: 920px;
+  display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 4px;
   background: rgba(252,249,248,0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -326,7 +370,7 @@ main { position: relative; overflow: hidden; }
   padding: 8px 16px;
   font-size: 13px;
   border-radius: 6px;
-  margin-left: auto;
+  margin-left: 4px;
 }
 
 /* ══════════════════════════════════════════════════
