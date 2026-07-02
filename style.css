@@ -224,6 +224,8 @@ main { position: relative; overflow: hidden; }
 
 .btn-lg { padding: 14px 28px; font-size: 15px; }
 
+.hero-center .btn-hablemos { margin-top: 8px; }
+
 .btn-hablemos {
   position: relative;
   display: inline-flex;
