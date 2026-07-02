@@ -3,11 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 // ── NAV SCROLL ────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  const scrolled = window.scrollY > 50;
-  nav.classList.toggle('nav-scrolled', scrolled);
-  nav.style.background = scrolled
-    ? 'rgba(252,249,248,0.97)'
-    : 'rgba(252,249,248,0.85)';
+  nav.classList.toggle('nav-scrolled', window.scrollY > 50);
 }, { passive: true });
 
 // ── NAV ACTIVE LINK ───────────────────────────────────
@@ -20,7 +16,7 @@ const sectionObs = new IntersectionObserver((entries) => {
     if (link) link.classList.add('active');
   });
 }, { threshold: 0.35 });
-['que-es', 'metodo', 'comunidad'].forEach(id => {
+['metodo', 'comunidad'].forEach(id => {
   const el = document.getElementById(id);
   if (el) sectionObs.observe(el);
 });
@@ -68,21 +64,10 @@ function initMotion() {
 
   // ── HERO ENTRANCE ────────────────────────────────────
   gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .from('#hero .eyebrow',       { y: 18, opacity: 0, duration: 0.75 }, 0.1)
-    .from('#hero h1',             { y: 52, opacity: 0, duration: 1.1  }, 0.25)
-    .from('#hero .hero-sub',      { y: 30, opacity: 0, duration: 0.95 }, 0.5)
-    .from('#hero .hero-ctas > *', { y: 20, opacity: 0, duration: 0.8, stagger: 0.12 }, 0.72);
-
-  // ── BLOB PARALLAX ─────────────────────────────────────
-  // Cada blob se mueve a velocidad distinta → sensación de profundidad
-  gsap.to('.blob-1', {
-    y: -60, ease: 'none',
-    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
-  });
-  gsap.to('.blob-2', {
-    y: -40, ease: 'none',
-    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 2 }
-  });
+    .from('#hero .eyebrow',      { y: 14, opacity: 0, duration: 0.7  }, 0.1)
+    .from('#hero h1',            { y: 40, opacity: 0, duration: 1.1  }, 0.25)
+    .from('#hero .hero-sub',     { y: 24, opacity: 0, duration: 0.95 }, 0.5)
+    .from('#hero .hero-cta-link',{ y: 16, opacity: 0, duration: 0.8  }, 0.68);
 
   // ── HELPERS ───────────────────────────────────────────
 
