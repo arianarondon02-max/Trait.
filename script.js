@@ -1,11 +1,11 @@
 // ── NAV SCROLL STATE ──
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+  nav.classList.toggle('nav-scrolled', window.scrollY > 50);
 }, { passive: true });
 
 // ── NAV ACTIVE LINK ──
-const navLinks = document.querySelectorAll('.nav-links a');
+const navLinks = document.querySelectorAll('.nav-links a:not(.nav-link-community)');
 const navSections = ['que-es', 'metodo', 'comunidad-section'];
 
 const sectionObs = new IntersectionObserver((entries) => {
@@ -18,21 +18,12 @@ const sectionObs = new IntersectionObserver((entries) => {
       if (link) link.classList.add('active');
     }
   });
-}, { threshold: 0.25 });
+}, { threshold: 0.3 });
 
 navSections.forEach(id => {
   const el = document.getElementById(id);
   if (el) sectionObs.observe(el);
 });
-
-// ── HERO HEADLINE STAGGER ──
-const heroHeadline = document.querySelector('.hero-headline');
-if (heroHeadline) {
-  const parts = heroHeadline.innerHTML.split('<br>').map(s => s.trim()).filter(Boolean);
-  heroHeadline.innerHTML = parts
-    .map((part, i) => `<span class="hero-line" style="--line-index:${i}">${part}</span>`)
-    .join('');
-}
 
 // ── SCROLL REVEAL ──
 const revealObs = new IntersectionObserver((entries) => {
@@ -44,8 +35,11 @@ const revealObs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.08 });
 
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-  revealObs.observe(el);
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── HERO REVEAL (triggered immediately, with css delay) ──
+document.querySelectorAll('.reveal-hero').forEach(el => {
+  requestAnimationFrame(() => el.classList.add('visible'));
 });
 
 // ── COUNT-UP ──
@@ -54,7 +48,7 @@ function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 function countUp(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
-  const duration = 1600;
+  const duration = 1800;
   const start = performance.now();
   function tick(now) {
     const t = Math.min((now - start) / duration, 1);
@@ -74,3 +68,29 @@ const countObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+// ── MOBILE MENU ──
+const hamburger    = document.getElementById('hamburger');
+const mobileMenu   = document.getElementById('mobileMenu');
+const mobileOverlay= document.getElementById('mobileOverlay');
+const mobileClose  = document.getElementById('mobileClose');
+
+function openMenu() {
+  mobileMenu.classList.add('open');
+  mobileOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  mobileOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (hamburger) hamburger.addEventListener('click', openMenu);
+if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+
+// Close menu when a link inside it is clicked
+if (mobileMenu) {
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+}
