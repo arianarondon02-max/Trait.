@@ -126,19 +126,12 @@ main { position: relative; overflow: hidden; }
 }
 
 /* ══════════════════════════════════════════════════
-   ANIMATIONS
+   ANIMATIONS — GSAP handles all reveals
 ══════════════════════════════════════════════════ */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-20px); }
 }
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 640ms var(--ease-out), transform 640ms var(--ease-out);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ══════════════════════════════════════════════════
    DECORATIVE BLOBS
@@ -150,6 +143,7 @@ main { position: relative; overflow: hidden; }
   opacity: 0.12;
   pointer-events: none;
   z-index: 0;
+  will-change: transform;
 }
 .blob-1 {
   top: -10%;
