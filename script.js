@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
 
 // ── NAV ACTIVE LINK ──
 const navLinks = document.querySelectorAll('.nav-links a');
-const navSections = ['que-es', 'modos', 'metodo', 'servicios', 'preguntas'];
+const navSections = ['que-es', 'metodo', 'comunidad-section'];
 
 const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -42,7 +42,7 @@ const revealObs = new IntersectionObserver((entries) => {
       revealObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.10 });
+}, { threshold: 0.08 });
 
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
   revealObs.observe(el);
@@ -74,19 +74,3 @@ const countObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
-
-// ── FAQ ACCORDION ──
-document.querySelectorAll('.faq-item').forEach(item => {
-  const btn = item.querySelector('.faq-q');
-  btn.addEventListener('click', () => {
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
