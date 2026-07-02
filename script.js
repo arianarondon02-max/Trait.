@@ -6,17 +6,19 @@ window.addEventListener('scroll', () => {
 
 // ── NAV ACTIVE LINK ──
 const navLinks = document.querySelectorAll('.nav-links a');
-const navSections = ['como-funciona', 'modos', 'servicios', 'preguntas'];
+const navSections = ['que-es', 'modos', 'metodo', 'servicios', 'preguntas'];
 
 const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      const link = document.querySelector(
+        `.nav-links a[href="#${entry.target.id}"], .nav-links a[href="/#${entry.target.id}"]`
+      );
       if (link) link.classList.add('active');
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.25 });
 
 navSections.forEach(id => {
   const el = document.getElementById(id);
@@ -40,11 +42,11 @@ const revealObs = new IntersectionObserver((entries) => {
       revealObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.10 });
 
-document.querySelectorAll(
-  '.reveal, .reveal-left, .reveal-right, .reveal-scale, .fase-connector'
-).forEach(el => revealObs.observe(el));
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+  revealObs.observe(el);
+});
 
 // ── COUNT-UP ──
 function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
@@ -52,7 +54,7 @@ function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
 function countUp(el) {
   const target = parseInt(el.dataset.count);
   const suffix = el.dataset.suffix || '';
-  const duration = 1400;
+  const duration = 1600;
   const start = performance.now();
   function tick(now) {
     const t = Math.min((now - start) / duration, 1);
