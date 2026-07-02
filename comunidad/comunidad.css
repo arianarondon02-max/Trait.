@@ -1,41 +1,31 @@
-/* ============================================
-   VARIABLES (mismos tokens que el sitio)
-   ============================================ */
+/* ── FONT/TOKEN OVERRIDES (aligns with new design system) ── */
 :root {
-  --color-accent:        #6B5CF0;
-  --color-accent-light:  #EBE9FC;
-  --color-accent-border: #E8E6F5;
+  --color-accent:        #1347C8;
+  --color-accent-light:  rgba(19, 71, 200, 0.08);
+  --color-accent-border: #E2E2EE;
   --color-bg-white:      #FFFFFF;
-  --color-text-main:     #0F0E17;
-  --color-text-muted:    #6E6D7A;
-  --font-heading:        'Satoshi', sans-serif;
+  --color-text-main:     #0A0A10;
+  --color-text-muted:    #72728A;
+  --font-heading:        'Fraunces', Georgia, serif;
   --font-body:           'Inter', system-ui, sans-serif;
-  --radius-card:         12px;
+  --font-mono:           'Geist Mono', 'Courier New', monospace;
+  --radius-card:         14px;
   --radius-pill:         999px;
 }
 
-/* ============================================
-   FONDO DEGRADADO (inspirado en la imagen)
-   Se reemplaza el fondo blanco por un gradiente
-   púrpura → rosa → melocotón, usando los
-   colores de Trait como base
-   ============================================ */
+/* ── PAGE BACKGROUND ── */
 .comunidad-page {
   min-height: 100vh;
   background: linear-gradient(
-    135deg,
-    #f0eeff 0%,       /* lavender muy claro (paleta Trait) */
-    #d4caff 25%,      /* púrpura suave */
-    #c5b8f8 45%,      /* púrpura medio */
-    #e0c4f0 65%,      /* lila rosado */
-    #f5dde8 85%,      /* rosado claro */
-    #fce8dc 100%      /* melocotón */
+    150deg,
+    #F2F2F8 0%,
+    #E8EDF8 35%,
+    #D8E4F4 65%,
+    #C6D6F0 100%
   );
 }
 
-/* ============================================
-   HERO LAYOUT — split en dos columnas
-   ============================================ */
+/* ── HERO SPLIT LAYOUT ── */
 .comunidad-hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -55,44 +45,41 @@
   }
 }
 
-/* ============================================
-   LADO IZQUIERDO — Texto
-   ============================================ */
+/* ── LEFT: TEXT ── */
 .eyebrow {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1.1px;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .comunidad-hero__heading {
   font-family: var(--font-heading);
+  font-optical-sizing: auto;
   font-size: clamp(2.4rem, 4.5vw, 3.8rem);
   font-weight: 700;
+  font-style: italic;
   color: var(--color-text-main);
-  line-height: 1.15;
+  line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 
-.accent-text {
-  color: var(--color-accent);
-}
+.accent-text { color: var(--color-accent); }
 
 .comunidad-hero__sub {
   font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
   max-width: 460px;
 }
 
-/* ============================================
-   LADO DERECHO — Formulario card
-   ============================================ */
+/* ── RIGHT: FORM ── */
 .comunidad-hero__right {
   display: flex;
   justify-content: center;
@@ -100,18 +87,18 @@
 }
 
 .comunidad-form {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 0.625px solid rgba(232, 230, 245, 0.8);
-  border-radius: 20px;
+  background: rgba(255,255,255,0.84);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.72);
+  border-radius: 18px;
   padding: 2rem 2.25rem;
   width: 100%;
   max-width: 480px;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  box-shadow: 0 8px 32px rgba(107, 92, 240, 0.08);
+  box-shadow: 0 8px 40px rgba(19, 71, 200, 0.07), 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .form-row {
@@ -137,8 +124,8 @@
   font-family: var(--font-body);
   font-size: 14px;
   color: var(--color-text-main);
-  background: rgba(255, 255, 255, 0.7);
-  border: 0.625px solid var(--color-accent-border);
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--color-accent-border);
   border-radius: 8px;
   padding: 10px 14px;
   outline: none;
@@ -147,13 +134,11 @@
   box-sizing: border-box;
 }
 
-.form-group input::placeholder {
-  color: #C4C3CC;
-}
+.form-group input::placeholder { color: #C0C0D4; }
 
 .form-group input:focus {
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(107, 92, 240, 0.12);
+  box-shadow: 0 0 0 3px rgba(19, 71, 200, 0.12);
   background: #ffffff;
 }
 
@@ -169,19 +154,15 @@
   font-weight: 600;
   cursor: pointer;
   margin-top: 0.5rem;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
   letter-spacing: 0.01em;
 }
 
-.form-submit:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
+.form-submit:hover { background: #0F3DB0; }
+.form-submit:active { transform: scale(0.98); }
 
-/* ============================================
-   NAV OVERRIDE en la página comunidad
-   ============================================ */
+/* ── NAV ACTIVE STATE ON COMUNIDAD PAGE ── */
 .comunidad-page .nav-link-community {
-  background: rgb(245, 244, 253);
-  color: rgb(107, 92, 240);
+  background: rgba(19, 71, 200, 0.08);
+  color: #1347C8;
 }
