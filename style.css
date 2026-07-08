@@ -3,7 +3,7 @@
 ══════════════════════════════════════════════════ */
 :root {
   /* Backgrounds */
-  --bg:              #fcf9f8;
+  --bg:              radial-gradient(ellipse at 15% 15%, #F0ECFF 0%, #FAFAFF 55%, #EEE9FF 100%);
   --bg-tinted:       #f6f3f2;
   --bg-container:    #f0edec;
   --bg-dark:         #1c1b1b;
