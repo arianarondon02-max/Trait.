@@ -224,7 +224,7 @@ main { position: relative; overflow: hidden; }
 
 .btn-lg { padding: 14px 28px; font-size: 15px; }
 
-.hero-center .btn-hablemos {
+.hero-center .hero-actions {
   margin-top: 8px;
   animation: hero-btn-in 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.70s both;
 }
@@ -232,6 +232,35 @@ main { position: relative; overflow: hidden; }
   from { opacity: 0; transform: translateY(16px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0)    scale(1);    }
 }
+
+.hero-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-agenda-demo {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 22px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 200ms var(--ease-enter), border-color 200ms var(--ease-enter), transform 150ms var(--ease-enter);
+}
+.btn-agenda-demo:hover {
+  background: var(--bg-container);
+  border-color: rgba(120,117,135,0.45);
+  transform: translateY(-1px);
+}
+.btn-agenda-demo:active { transform: scale(0.97); }
 
 .btn-hablemos {
   position: relative;
